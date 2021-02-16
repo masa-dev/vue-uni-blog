@@ -11,7 +11,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "_base.scss";
 
 div.main-content {
