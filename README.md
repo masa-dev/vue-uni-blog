@@ -1,4 +1,7 @@
-# test
+# vue-uni-blog
+
+大学の個人のサイト用
+ビルドしてFTPでアップロードする
 
 ## Project setup
 ```
