@@ -95,7 +95,7 @@ header {
     }
     nav {
       ul {
-        border-bottom: 1px solid rgb(187, 187, 187);
+        border-bottom: 1px solid rgb(129, 129, 129);
       }
 
       a {

@@ -13,7 +13,7 @@
         <MainContent />
         <SideContent />
       </main>
-      <Footer msg="buturi laboratory" />
+      <Footer :msg="getFooterMsg()" />
     </div>
   </body>
 </template>
@@ -23,6 +23,7 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import MainContent from "@/components/MainContent.vue";
 import SideContent from "@/components/SideContent.vue";
+const siteConfig = require('../config');
 
 export default {
   name: "Home",
@@ -32,6 +33,11 @@ export default {
     SideContent,
     Footer,
   },
+  methods: {
+    getFooterMsg: function(){
+      return siteConfig.footerMsg
+    }
+  }
 };
 </script>
 

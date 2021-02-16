@@ -20,4 +20,14 @@ export default {
 footer {
   text-align: center;
 }
+
+@media (prefers-color-scheme: dark) {
+  footer {
+    hr {
+      height: 1px;
+      background-color: rgb(129, 129, 129);
+      border: none;
+    }
+  }
+}
 </style>

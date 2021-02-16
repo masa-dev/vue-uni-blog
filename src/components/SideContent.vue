@@ -7,21 +7,23 @@
           title="プロフィール画像"
           alt="プロフィール画像"
       /></router-link>
-      <p class="author">戸田</p>
-      <p class="author-description">大学生</p>
+      <p class="author">{{ getName() }}</p>
+      <p class="author-description">{{ getBio() }}</p>
       <p class="author-description">
-        <a href="https://github.com/masa-dev" target="_blank" rel="noopener"
-          >Github</a
-        >
+        <a :href="getGithubUrl()" target="_blank" rel="noopener">Github</a>
       </p>
       <div class="tools">
-        <a href="https://github.com/masa-dev" target="_blank" rel="noopener"
+        <a
+          :href="getGithubUrl()"
+          target="_blank"
+          rel="noopener"
+          v-if="seen('github')"
           ><img
             src="../assets/GitHub-Mark-Light-64px.png"
             title="github.com/masa-dev"
             alt="github.com/masa-dev"
         /></a>
-        <a href="mailto:1810990019g@hiro.kindai.ac.jp"
+        <a :href="'mailto:' + getMail()" v-if="seen('mail')"
           ><img src="../assets/mail-icon.png" title="mail" alt="mail"
         /></a>
       </div>
@@ -30,9 +32,34 @@
 </template>
 
 <script>
+const siteConfig = require("../../config");
+
 export default {
   name: "SideContent",
-  props: {},
+  methods: {
+    getName: function () {
+      return siteConfig.author.name;
+    },
+    getBio: function () {
+      return siteConfig.author.bio;
+    },
+    getGithubUrl: function () {
+      return siteConfig.author.github;
+    },
+    getMail: function () {
+      return siteConfig.author.mail;
+    },
+    seen: function (iconName = "") {
+      if (
+        siteConfig.author[iconName] != "" &&
+        Object.keys(siteConfig.author).indexOf(iconName) !== -1
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
 };
 </script>
 
