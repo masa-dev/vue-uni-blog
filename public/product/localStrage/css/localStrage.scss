@@ -1,0 +1,102 @@
+$defaultWidth: 800px;
+$skyBlue: rgb(41, 138, 230);
+$selectedSkyBlue: rgb(34, 124, 207);
+
+body {
+  header {
+    width: $defaultWidth;
+    margin: 0 auto;
+  }
+  main {
+    width: $defaultWidth;
+    margin: 0 auto;
+
+    #input-area {
+      .input-form {
+        margin: 5px 0;
+
+        div.attr-name {
+          display: inline-block;
+          width: 80px;
+        }
+        input {
+          width: 200px;
+          height: 24px;
+          border: 1px solid gray;
+          border-radius: 5px;
+
+          &:hover {
+            border-color: $skyBlue;
+            box-shadow: 0 0 2px $skyBlue;
+          }
+
+          &:focus {
+            outline: none;
+            border-color: $skyBlue;
+            box-shadow: 0 0 2px $skyBlue;
+          }
+        }
+      }
+    }
+    #btn-area {
+      margin: 15px 0;
+
+      button {
+        width: 100px;
+        height: 36px;
+        font-size: 1.1em;
+        color: white;
+        background-color: $skyBlue;
+        border: 1px solid $skyBlue;
+        border-radius: 5px;
+        margin: 0 5px;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: $selectedSkyBlue;
+          box-shadow: 0 0 2px $selectedSkyBlue;
+        }
+        &:focus {
+          outline: none;
+          background-color: $selectedSkyBlue;
+          box-shadow: 0 0 2px $selectedSkyBlue;
+        }
+
+        &#clear-btn {
+          color: $skyBlue;
+          background-color: white;
+
+          &:hover {
+            color: white;
+            background-color: $selectedSkyBlue;
+          }
+          &:focus {
+            color: white;
+            background-color: $selectedSkyBlue;
+          }
+        }
+      }
+    }
+    #result-area {
+      table {
+        width: 300px;
+        margin: 10px 0;
+        border-collapse: collapse;
+        border-spacing: 0;
+
+        tr {
+          th {
+            width: 50%;
+            height: 30px;
+            border: 1px solid gray;
+          }
+          td {
+            width: 50%;
+            height: 30px;
+            border: 1px solid gray;
+          }
+        }
+      }
+    }
+  }
+}

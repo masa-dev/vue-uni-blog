@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>local strage</title>
+  <link rel="stylesheet" href="./css/localStrage.css">
+</head>
+
+<body onload="result.getData()">
+
+  <header>
+    <h1>local strage 動作確認用</h1>
+  </header>
+  <main>
+    <div id="input-area">
+      <p>キー(key)と値(value)を入力</p>
+      <div class="input-form">
+        <div class="attr-name">key :</div><input type="text" id="input-key" placeholder="key">
+      </div>
+      <div class="input-form">
+        <div class="attr-name">value :</div><input type="text" id="input-value" placeholder="value">
+      </div>
+    </div>
+    <div id="btn-area">
+      <button id="set-btn">セット</button>
+      <button id="remove-btn">削除</button>
+      <button id="clear-btn">クリア</button>
+    </div>
+    <div id="result-area">
+      <table v-if="seen">
+        <tr>
+          <th>key</th>
+          <th>value</th>
+        </tr>
+        <tr v-for="item in list" :key="item.key">
+          <td>{{ item.key }}</td>
+          <td>{{ item.value }}</td>
+        </tr>
+      </table>
+    </div>
+  </main>
+  <!-- vue.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    // 入力の element
+    const inputKey = document.getElementById('input-key');
+    const inputValue = document.getElementById('input-value');
+
+    // ボタンの element
+    const setBtn = document.getElementById('set-btn');
+    const removeBtn = document.getElementById('remove-btn');
+    const clearBtn = document.getElementById('clear-btn');
+
+    // vue インスタンス
+    const result = new Vue({
+      el: '#result-area',
+      data: {
+        seen: true,
+        list: []
+      },
+      methods: {
+        setData: function (data = {}) {
+          // 同じ key のプロパティがある場合の処理
+          for (let i = 0; i < this.list.length; i++) {
+            if (this.list[i].key === data.key) {
+              this.list[i].value = data.value;
+              localStorage.setItem(data.key, data.value);
+              return;
+            }
+          }
+
+          // 新しい key プロパティの場合
+          this.list.push(data);
+          localStorage.setItem(data.key, data.value);
+        },
+
+        getData: function () {
+          let length = localStorage.length;
+          let key, value;
+
+          this.list.splice(0, this.list.length);
+          for (i = 0; i < length; i++) {
+            key = localStorage.key(i);
+            value = localStorage.getItem(key);
+
+            this.list.push({ key: key, value: value });
+          }
+        },
+
+        removeData: function (keyName) {
+          for (let i = 0; i < this.list.length; i++) {
+            if (this.list[i].key === keyName) {
+              this.list.splice(i, 1);
+              localStorage.removeItem(keyName);
+            }
+          }
+        },
+
+        clearData: function () {
+          this.list.splice(0, this.list.length);
+          localStorage.clear();
+        },
+      }
+    });
+
+    // イベントハンドラ
+    setBtn.addEventListener('click', function () {
+      result.setData({ key: inputKey.value, value: inputValue.value });
+    });
+
+    removeBtn.addEventListener('click', function () {
+      result.removeData(inputKey.value);
+    });
+
+    clearBtn.addEventListener('click', function () {
+      result.clearData();
+    });
+  </script>
+</body>
+
+</html>

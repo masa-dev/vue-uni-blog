@@ -1,0 +1,189 @@
+$blue: rgb(29, 123, 230);
+$transparentBlue: rgb(29, 123, 230);
+$mainWidth: 500px;
+
+@mixin inputAsset($transparency: 1) {
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 2px 8px;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    border-color: $blue;
+    box-shadow: 0 0 0 2px rgba(29, 123, 230, $transparency);
+  }
+}
+
+body {
+  width: 900px;
+  margin: 0 auto;
+
+  header > h1 {
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 15px auto;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  main {
+    box-sizing: border-box;
+    width: $mainWidth;
+    margin: 0 auto;
+    padding: 10px 20px;
+
+    > #post-form-area {
+      width: 100%;
+
+      h2 {
+        margin-top: 0;
+      }
+
+      .form-group {
+        margin: 10px 0;
+
+        > label {
+          min-width: 100px;
+          display: block;
+          float: left;
+        }
+
+        > input {
+          width: 200px;
+          min-height: 2em;
+        }
+
+        > textarea {
+          font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
+            sans-serif;
+          width: 300px;
+          height: 80px;
+        }
+
+        > input,
+        textarea {
+          font-size: 0.95rem;
+          @include inputAsset(0.3);
+        }
+      }
+
+      button {
+        color: white;
+        display: block;
+        width: 80%;
+        height: 40px;
+        font-size: 1.2rem;
+        border: 1px solid $blue;
+        border-radius: 3px;
+        margin: 0 auto;
+        background-color: $blue;
+
+        &:hover,
+        &:focus {
+          outline: none;
+          border-color: $blue;
+          box-shadow: 0 0 0 2px rgba(29, 123, 230, 0.3);
+        }
+      }
+    }
+    > #posts-list-area {
+      width: 100%;
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      > ul {
+        padding-left: 0;
+
+        > li {
+          padding: 0 10px;
+          border-top: 1px solid gray;
+          list-style: none;
+          max-height: 400px;
+          overflow-y: hidden;
+
+          &:last-child {
+            border-bottom: 1px solid gray;
+          }
+
+          > .list-header {
+            position: relative;
+
+            > p.list-user-name {
+              font-size: 1.2rem;
+              font-weight: bold;
+
+              img {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                vertical-align: bottom;
+              }
+            }
+
+            > span.list-user-time {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              display: inline-block;
+              font-size: 0.85rem;
+              color: gray;
+            }
+          }
+
+          .list-content {
+            > p.list-user-message {
+              padding-left: 15px;
+              clear: right;
+              font-size: 1rem;
+              word-wrap: break-word;
+            }
+          }
+        }
+      }
+
+      .page-index {
+        text-align: center;
+      }
+    }
+  }
+
+  footer {
+    width: 90%;
+    margin: 0 auto;
+    color: gray;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: $mainWidth) {
+  body {
+    main {
+      width: 100%;
+      > #post-form-area .form-group {
+        > textarea,
+        input {
+          width: 90%;
+        }
+      }
+      > #posts-list-area > ul > li > .list-header {
+        > p.list-user-name {
+          margin-bottom: 5px;
+        }
+        > span.list-user-time {
+          position: initial;
+        }
+      }
+    }
+  }
+}

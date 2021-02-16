@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>図書検索システム</title>
+    <style>
+        html {
+            background-color: rgb(252, 250, 242);
+        }
+
+        body {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #search-bar {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        #input-search-words {
+            width: 87%;
+            height: 40px;
+            font-size: 17px;
+            box-sizing: border-box;
+            padding: 5px 0 5px 18px;
+            border: 1px solid rgb(128, 128, 128);
+            border-right: none;
+            border-radius: 20px 0 0 20px;
+            transition: all 0.3s;
+        }
+
+        #input-search-words:hover {
+            box-shadow: 0 0 0 2px rgb(29, 123, 230, 0.4);
+        }
+
+        #input-search-words:focus {
+            border-color: rgb(29, 123, 230);
+            box-shadow: 0 0 0 2px rgb(29, 123, 230, 0.4);
+            outline: none;
+        }
+
+        #g-book-search-btn {
+            width: 13%;
+            height: 40px;
+            font-size: 17px;
+            color: rgb(243, 243, 243);
+            box-sizing: border-box;
+            background-color: rgb(29, 123, 230);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border: none;
+            border-radius: 0 20px 20px 0;
+            transition: all 0.3s;
+        }
+
+        #g-book-search-btn:hover {
+            box-shadow: 0 0 0 2px rgb(29, 123, 230, 0.4);
+        }
+
+        #g-book-search-btn:focus {
+            box-shadow: 0 0 0 2px rgb(29, 123, 230, 0.4);
+            outline: none;
+        }
+
+        p#result-text {
+            text-align: center;
+        }
+
+        #g-books-result {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .result-book {
+            width: 210px;
+            box-sizing: border-box;
+            padding: 10px 15px;
+            margin: 20px 10px;
+            background-color: rgb(255, 248, 232);
+            box-shadow: 0 0 8px rgb(128, 128, 128);
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .result-book:hover {
+            transform: scale(1.03, 1.03);
+        }
+
+        .result-book .book-img {
+            max-width: 160px;
+            height: 220px;
+            object-fit: contain;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .result-book>p {
+            font-size: 0.9em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin: 5px 0;
+        }
+
+        .result-book>.book-title {
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        #result-index-area {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        #result-index-area>button {
+            height: 24px;
+            font-weight: bold;
+            color: blue;
+            box-sizing: border-box;
+            padding: 0 15px;
+            margin: 0 10px;
+            border: 2px solid rgb(0, 0, 0, 0.0);
+            border-radius: 5px;
+            background-color: rgb(0, 0, 0, 0.0);
+            transition: all 0.3s;
+        }
+
+        #result-index-area>input {
+            width: 50px;
+            height: 24px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        #result-index-area>button:hover {
+            background-color: rgb(0, 0, 0, 0.1);
+        }
+
+        #result-index-area>button:focus {
+            outline: none;
+            border: 2px solid gray;
+            background-color: rgb(0, 0, 0, 0.05);
+        }
+
+        footer>p {
+            color: gray;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>図書検索システム</h1>
+    </header>
+    <main>
+        <div id="search-bar">
+            <input type="search" id="input-search-words" placeholder="検索したい本を入力"><button type="button"
+                id="g-book-search-btn">検索</button>
+        </div>
+        <div id="search-result">
+            <p id="result-text">検索したい本を入力してEnterキーを押す</p>
+            <div id="g-books-result"></div>
+        </div>
+        <div id="result-index-area">
+            <button id="prev-btn" type="button">&lt;</button><input id="input-result-index" type="number" min="1"
+                step="1" value="1"><button id="next-btn" type="button">&gt;</button>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        <p><small>Search engine is powered by Google Book APIs</small></p>
+        <p><small>2020年 卒研ゼミ課題</small></p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script>
+        'use strict';
+        const inputSearchWords = $('#input-search-words');
+        const gBookSearchBtn = $('#g-book-search-btn');
+        const gBooksResult = $('#g-books-result');
+
+        // 次/前のページのボタン
+        const inputResultIndex = $('#input-result-index');
+        const prevBtn = $('#prev-btn');
+        const nextBtn = $('#next-btn');
+
+        // 関数の実行するトリガー
+        inputSearchWords.keydown(function (e) {
+            if (e.key === 'Enter') {
+                // 検索バーから検索した場合はページを1に戻す
+                inputResultIndex.val(1);
+                searchBooks();
+            }
+        });
+        inputResultIndex.keydown(function (e) {
+            if (e.key === 'Enter') {
+                searchBooks();
+            }
+        });
+        gBookSearchBtn.click(function () {
+            // 検索バーから検索した場合はページを1に戻す
+            inputResultIndex.val(1);
+            searchBooks();
+        });
+
+        // 次/前のページのボタン
+        prevBtn.click(function () {
+            let index = parseInt(inputResultIndex.val());
+            if (index >= 2) {
+                inputResultIndex.val(index - 1);
+                searchBooks();
+            }
+        });
+        nextBtn.click(function () {
+            let index = parseInt(inputResultIndex.val());
+            inputResultIndex.val(index + 1);
+            searchBooks();
+        });
+
+
+        function searchBooks() {
+            let keyWords = inputSearchWords.val();  // 検索ワード
+            let index = parseInt(inputResultIndex.val() - 1) * 20;  // 開始のインデックス
+            let url = 'https://www.googleapis.com/books/v1/volumes?q=' + keyWords + '&startIndex=' + index + '&maxResults=20';
+
+            if (keyWords === "") {
+                alert('検索ワードを入れて検索してください');
+                return;
+            }
+
+            // 要素を空にする
+            gBooksResult.empty();
+
+            // GoogleBooks検索
+            $.getJSON(url, function (data) {
+                // 検索結果がない場合は処理を終了する
+                if (data.totalItems === 0) {
+                    alert('検索結果がありませんでした．');
+                    return;
+                }
+                for (let book of data.items) {
+                    let div = $('<div/>').attr('class', 'result-book');
+                    // 本の画像
+                    try {
+                        let a = $('<a/>')
+                            .attr('class', 'img-link')
+                            .attr('href', changeHttpsUrl(book.volumeInfo.previewLink));
+                        $('<img/>')
+                            .attr('class', 'book-img')
+                            .attr('src', changeHttpsUrl(book.volumeInfo.imageLinks.smallThumbnail))
+                            .attr('alt', '画像：' + book.volumeInfo.title)
+                            .appendTo(a);
+                        a.appendTo(div);
+                    } catch (e) {
+                        console.log('An error caught in img:\n' + e);
+                        let a = $('<a/>')
+                            .attr('class', 'img-link')
+                            .attr('href', changeHttpsUrl(book.volumeInfo.previewLink));
+                        $('<img/>')
+                            .attr('class', 'book-img')
+                            .attr('alt', '画像：' + book.volumeInfo.title)
+                            .appendTo(a);
+                        a.appendTo(div);
+                    }
+                    // タイトル
+                    try {
+                        $('<p/>')
+                            .text(book.volumeInfo.title)
+                            .attr('class', 'book-title')
+                            .attr('title', book.volumeInfo.title)
+                            .appendTo(div);
+                    } catch (e) {
+                        console.log('An error caught in title:\n' + e);
+                        $('<p/>')
+                            .text('unknown')
+                            .attr('class', 'book-title')
+                            .appendTo(div);
+                    }
+                    // 著者
+                    try {
+                        $('<p/>')
+                            .text('著者：' + book.volumeInfo.authors + '(' + book.volumeInfo.publishedDate + ')')
+                            .attr('title', '著者：' + book.volumeInfo.authors + '(' + book.volumeInfo.publishedDate + ')')
+                            .appendTo(div);
+                    } catch (e) {
+                        console.log('An error caught in author:\n' + e);
+                        $('<p/>')
+                            .text('著者：unknown')
+                            .appendTo(div);
+                    }
+                    // ISBN 10
+                    try {
+                        let isbn = getISBN(book.volumeInfo.industryIdentifiers);
+                        $('<p/>')
+                            .text('ISBN：' + isbn)
+                            .appendTo(div);
+                    } catch (e) {
+                        console.log('An error caught in isbn:\n' + e);
+                        $('<p/>')
+                            .text('ISBN：unknown')
+                            .appendTo(div);
+                    }
+                    div.appendTo(gBooksResult);
+                }
+            });
+        }
+
+        function getISBN(industryIdentifiers) {
+            for (let item of industryIdentifiers) {
+                if (item.type === 'ISBN_10') {
+                    return item.identifier;
+                }
+            }
+            // ない場合はisbn13を返す
+            for (let item of industryIdentifiers) {
+                if (item.type === 'ISBN_13') {
+                    return item.identifier;
+                }
+            }
+            return 'unknown';
+        }
+
+        function changeHttpsUrl(url) {
+            // urlがssl通信でない時
+            if (url.indexOf('http://') != -1) {
+                return url.replace('http://', 'https://');
+            }
+            else {
+                return url;
+            }
+        }
+    </script>
+</body>
+
+</html>
