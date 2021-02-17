@@ -3,6 +3,7 @@
 module.exports = {
     publicPath: './',
     pathPrefix: '/student/2021/toda/', //default: process.env.BASE_URL,
+    title: 'Toda Blog',
     footerMsg: 'Physics Laboratory',
     author: {
         name: '戸田',

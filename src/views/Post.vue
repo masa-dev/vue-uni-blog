@@ -4,3 +4,9 @@
     <p>必要があれば，ここに記録などをしていこうと考えています．</p>
   </div>
 </template>
+
+<script>
+export default {
+  title: "Post",
+};
+</script>

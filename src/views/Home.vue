@@ -8,3 +8,9 @@
     <li><a href="./product/BBS/">掲示板</a></li>
   </div>
 </template>
+
+<script>
+export default {
+  title: "Home",
+};
+</script>

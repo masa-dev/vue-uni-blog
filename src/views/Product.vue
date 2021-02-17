@@ -10,3 +10,9 @@
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  title: "Product",
+};
+</script>
