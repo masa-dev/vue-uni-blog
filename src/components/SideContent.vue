@@ -10,20 +10,32 @@
       <p class="author">{{ getName() }}</p>
       <p class="author-description">{{ getBio() }}</p>
       <p class="author-description">
-        <a :href="getGithubUrl()" target="_blank" rel="noopener">Github</a>
+        <a :href="getContactUrl('github')" target="_blank" rel="noopener"
+          >GitHub</a
+        >
       </p>
       <div class="tools">
         <a
-          :href="getGithubUrl()"
+          :href="getContactUrl('twitter')"
+          target="_blank"
+          rel="noopener"
+          v-if="seen('twitter')"
+          ><img
+            src="../assets/twitter-icon.png"
+            title="twitter link"
+            alt="twitter.com/masa_devpro"
+        /></a>
+        <a
+          :href="getContactUrl('github')"
           target="_blank"
           rel="noopener"
           v-if="seen('github')"
           ><img
-            src="../assets/GitHub-Mark-Light-64px.png"
-            title="github.com/masa-dev"
+            src="../assets/github-icon.png"
+            title="github link"
             alt="github.com/masa-dev"
         /></a>
-        <a :href="'mailto:' + getMail()" v-if="seen('mail')"
+        <a :href="getContactUrl('mail')" v-if="seen('mail')"
           ><img src="../assets/mail-icon.png" title="mail" alt="mail"
         /></a>
       </div>
@@ -43,8 +55,16 @@ export default {
     getBio: function () {
       return siteConfig.author.bio;
     },
-    getGithubUrl: function () {
-      return siteConfig.author.github;
+    getContactUrl: function (type = "") {
+      if (type == "mail") {
+        return `mailto:${siteConfig.author.contacts.mail}`;
+      } else if (type == "github") {
+        return `https://github.com/${siteConfig.author.contacts.github}/`;
+      } else if (type == "twitter") {
+        return `https://twitter.com/${siteConfig.author.contacts.twitter}/`;
+      } else {
+        return ``;
+      }
     },
     getMail: function () {
       return siteConfig.author.mail;
@@ -52,7 +72,7 @@ export default {
     seen: function (iconName = "") {
       if (
         siteConfig.author[iconName] != "" &&
-        Object.keys(siteConfig.author).indexOf(iconName) !== -1
+        Object.keys(siteConfig.author.contacts).indexOf(iconName) !== -1
       ) {
         return true;
       } else {
@@ -93,6 +113,11 @@ div.side-content {
     }
 
     > a {
+      width: $profileImageWidth;
+      height: $profileImageWidth;
+      display: block;
+      border-radius: 50%;
+
       > img {
         width: $profileImageWidth;
         height: $profileImageWidth;

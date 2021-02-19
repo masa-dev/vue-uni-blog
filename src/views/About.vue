@@ -21,14 +21,13 @@
       <li>C</li>
       <li>HTML / CSS / SCSS</li>
       <li>JavaScript</li>
-      <li>python</li>
     </ul>
 
     <h3>フレームワーク / ライブラリ</h3>
     <ul>
       <li>Vue.js</li>
       <li>jQuery</li>
-      <li>bootstrap</li>
+      <li>Bootstrap</li>
     </ul>
 
     <h3>使用ツールなど</h3>
@@ -41,6 +40,6 @@
 
 <script>
 export default {
-  title: "About",
+  title: "About me",
 };
 </script>

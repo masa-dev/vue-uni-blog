@@ -1,14 +1,17 @@
 'use strict';
 
 module.exports = {
-    publicPath: './',
-    pathPrefix: '/student/2021/toda/', //default: process.env.BASE_URL,
-    title: 'Toda Blog',
-    footerMsg: 'Physics Laboratory',
-    author: {
-        name: '戸田',
-        bio: '大学生',
-        github: 'https://github.com/masa-dev/',
-        mail: '1810990019g@hiro.kindai.ac.jp'
+  publicPath: './',
+  pathPrefix: '/student/2021/toda/', //default: process.env.BASE_URL,
+  title: '戸田の卒研サイト',
+  footerMsg: 'Physics Laboratory',
+  author: {
+    name: '戸田',
+    bio: '大学生',
+    contacts: {
+      github: 'masa-dev',
+      mail: '1810990019g@hiro.kindai.ac.jp',
+      twitter: 'masa_devpro'
     }
+  }
 }
