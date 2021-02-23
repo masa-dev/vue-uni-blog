@@ -34,6 +34,10 @@ div.main-content {
     padding-left: 15px;
     border-left: 4px solid $mainHeadingBorderColor;
   }
+
+  ul {
+    padding-left: 20px;
+  }
 }
 
 @media only screen and (max-width: $flexibleWidth) {
