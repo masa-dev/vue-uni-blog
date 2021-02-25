@@ -8,23 +8,13 @@
           alt="プロフィール画像"
       /></router-link>
       <p class="author">{{ getName() }}</p>
-      <p class="author-description">{{ getBio() }}</p>
+      <p class="author-description" v-html="getBio()"></p>
       <p class="author-description">
         <a :href="getContactUrl('github')" target="_blank" rel="noopener"
           >GitHub</a
         >
       </p>
       <div class="tools">
-        <a
-          :href="getContactUrl('twitter')"
-          target="_blank"
-          rel="noopener"
-          v-if="seen('twitter')"
-          ><img
-            src="../assets/twitter-icon.png"
-            title="twitter link"
-            alt="twitter.com/masa_devpro"
-        /></a>
         <a
           :href="getContactUrl('github')"
           target="_blank"
@@ -34,6 +24,16 @@
             src="../assets/github-icon.png"
             title="github link"
             alt="github.com/masa-dev"
+        /></a>
+        <a
+          :href="getContactUrl('twitter')"
+          target="_blank"
+          rel="noopener"
+          v-if="seen('twitter')"
+          ><img
+            src="../assets/twitter-icon.png"
+            title="twitter link"
+            alt="twitter.com/masa_devpro"
         /></a>
         <a :href="getContactUrl('mail')" v-if="seen('mail')"
           ><img src="../assets/mail-icon.png" title="mail" alt="mail"
@@ -53,7 +53,7 @@ export default {
       return siteConfig.author.name;
     },
     getBio: function () {
-      return siteConfig.author.bio;
+      return siteConfig.author.bio.replace(/\n/g, "<br>");
     },
     getContactUrl: function (type = "") {
       if (type == "mail") {
@@ -87,7 +87,7 @@ export default {
 @import "_base.scss";
 
 div.side-content {
-  width: 200px;
+  width: $sideContentWidth;
   padding: 20px 0 0 0;
   text-align: center;
   box-sizing: border-box;
@@ -127,15 +127,15 @@ div.side-content {
 
     div.tools {
       /*text-align: left;*/
+      padding: 15px 5px 10px;
+      width: 100%;
       display: inline-flex;
       flex-wrap: wrap;
-      justify-content: center;
-      margin: 10px 0;
+      justify-content: space-around;
 
       img {
         width: $toolsImageWidth;
         height: $toolsImageWidth;
-        margin: 5px;
         border-radius: 50%;
         background-color: gray;
         box-shadow: 0 0 8px gray;

@@ -15,7 +15,7 @@ export default {
 @import "_base.scss";
 
 div.main-content {
-  width: 700px;
+  width: $mainContentWidth;
   padding: 0 15px;
   box-sizing: border-box;
 
@@ -32,7 +32,10 @@ div.main-content {
 
   h3 {
     padding-left: 15px;
-    border-left: 4px solid $mainHeadingBorderColor;
+    border: {
+      left: 4px solid $mainHeadingBorderColor;
+      radius: 3px;
+    }
   }
 
   ul {

@@ -2,16 +2,16 @@
 
 module.exports = {
   publicPath: './',
-  pathPrefix: '/',//student/2021/toda/', //default: process.env.BASE_URL,
+  pathPrefix: '/student/2021/toda/', //default: process.env.BASE_URL,
   title: '戸田の卒研サイト',
-  footerMsg: 'Physics Laboratory',
+  footerMsg: 'Physics Laboratory\n2021',
   author: {
     name: '戸田',
     bio: '大学生',
     contacts: {
       github: 'masa-dev',
+      twitter: 'masa_devpro',
       mail: '1810990019g@hiro.kindai.ac.jp',
-      twitter: 'masa_devpro'
     }
   }
 }

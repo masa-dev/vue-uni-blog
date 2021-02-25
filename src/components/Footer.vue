@@ -1,17 +1,20 @@
 <template>
   <footer>
     <hr />
-    <p>
-      <small>{{ msg }}</small>
-    </p>
+    <p v-html="footerMsg()"></p>
   </footer>
 </template>
 
 <script>
+const siteConfig = require("../../config");
+
 export default {
   name: "Footer",
-  props: {
-    msg: String,
+  props: {},
+  methods: {
+    footerMsg() {
+      return siteConfig.footerMsg.replace(/\n/g, "<br>");
+    },
   },
 };
 </script>
@@ -27,6 +30,9 @@ footer {
       height: 1px;
       background-color: rgb(129, 129, 129);
       border: none;
+    }
+    p {
+      font-size: 0.85rem;
     }
   }
 }

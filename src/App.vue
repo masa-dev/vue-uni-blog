@@ -6,7 +6,7 @@
         <MainContent />
         <SideContent />
       </main>
-      <Footer :msg="getFooterMsg()" />
+      <Footer />
     </div>
   </body>
 </template>
@@ -16,7 +16,6 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import MainContent from "@/components/MainContent.vue";
 import SideContent from "@/components/SideContent.vue";
-const siteConfig = require("../config");
 
 export default {
   name: "Home",
@@ -26,11 +25,6 @@ export default {
     SideContent,
     Footer,
   },
-  methods: {
-    getFooterMsg: function () {
-      return siteConfig.footerMsg;
-    },
-  },
 };
 </script>
 
@@ -38,7 +32,7 @@ export default {
 @import "components/_base.scss";
 
 body {
-  width: 900px;
+  width: $flexibleWidth;
   margin: 0 auto;
   color: $defaultColor;
   /*background-color: rgb(15, 37, 64);*/
@@ -72,7 +66,7 @@ body {
 }
 
 main {
-  width: 900px;
+  width: $flexibleWidth;
   display: flex;
   flex-wrap: wrap;
 }
