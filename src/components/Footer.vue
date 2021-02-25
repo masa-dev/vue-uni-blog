@@ -1,7 +1,10 @@
 <template>
   <footer>
     <hr />
-    <p v-html="footerMsg()"></p>
+    <p>
+      <span v-html="footerMsg()"></span><br />
+      {{ date }}
+    </p>
   </footer>
 </template>
 
@@ -11,10 +14,25 @@ const siteConfig = require("../../config");
 export default {
   name: "Footer",
   props: {},
+  data() {
+    return {
+      date: null,
+    };
+  },
   methods: {
     footerMsg() {
       return siteConfig.footerMsg.replace(/\n/g, "<br>");
     },
+    getDate() {
+      const date = new Date();
+      this.date = `${date.getFullYear()}/${
+        date.getMonth() + 1
+      }/${date.getDate()}`;
+    },
+  },
+  mounted() {
+    this.getDate();
+    setInterval(() => this.getDate(), 1000);
   },
 };
 </script>
