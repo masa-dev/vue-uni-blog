@@ -10,6 +10,7 @@
 
 <script>
 const siteConfig = require("../../config");
+const date = new Date();
 
 export default {
   name: "Footer",
@@ -24,10 +25,13 @@ export default {
       return siteConfig.footerMsg.replace(/\n/g, "<br>");
     },
     getDate() {
-      const date = new Date();
-      this.date = `${date.getFullYear()}/${
+      let str = `${date.getFullYear()}/${
         date.getMonth() + 1
       }/${date.getDate()}`;
+
+      if (this.date != str) {
+        this.date = str;
+      }
     },
   },
   mounted() {
