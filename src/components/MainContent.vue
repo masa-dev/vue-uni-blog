@@ -31,6 +31,8 @@ div.main-content {
   }
 
   h3 {
+    margin-top: 1.25em;
+    margin-bottom: 0.9em;
     padding-left: 15px;
     border: {
       left: 4px solid $mainHeadingBorderColor;
