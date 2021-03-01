@@ -3,8 +3,9 @@ body header {
 }
 
 body main {
-  width: 100%;
+  width: 1200px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 body main #input-area {
@@ -86,5 +87,11 @@ body footer {
 
 body footer p {
   text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  body main {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

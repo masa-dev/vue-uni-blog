@@ -1,12 +1,14 @@
 $contentHeight: 600px;
+$maxWidth: 1200px;
 
 body {
   header {
     text-align: center;
   }
   main {
-    width: 100%;
+    width: $maxWidth;
     overflow: hidden;
+    margin: 0 auto;
 
     #input-area {
       width: 49.5%;
@@ -82,5 +84,11 @@ body {
     p {
       text-align: center;
     }
+  }
+}
+
+@media only screen and (max-width: $maxWidth) {
+  body main {
+    width: 100%;
   }
 }
