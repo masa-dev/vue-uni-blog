@@ -1,0 +1,86 @@
+$contentHeight: 600px;
+
+body {
+  header {
+    text-align: center;
+  }
+  main {
+    width: 100%;
+    overflow: hidden;
+
+    #input-area {
+      width: 49.5%;
+      float: left;
+
+      > h2 {
+        padding-left: 1rem;
+        margin: 0;
+      }
+
+      > textarea {
+        width: 100%;
+        height: $contentHeight;
+        font-family: "Arial";
+        font-size: 1rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
+        resize: none;
+        vertical-align: bottom;
+        border-radius: 3px;
+
+        &:hover {
+          box-shadow: 0 0 3px rgb(29, 123, 230);
+        }
+
+        &:focus {
+          border-color: rgb(29, 123, 230);
+          box-shadow: 0 0 3px rgb(29, 123, 230);
+          outline: none;
+        }
+      }
+    }
+
+    #preview-area {
+      float: right;
+      width: 49.5%;
+
+      > h2 {
+        padding-left: 1rem;
+        margin: 0;
+      }
+
+      #preview {
+        width: 100%;
+        height: $contentHeight;
+        box-sizing: border-box;
+        padding: 0 0.5rem;
+        border: 1px solid gray;
+        overflow: auto;
+        word-wrap: break-word;
+        border-radius: 3px;
+      }
+
+      #html-source {
+        display: none;
+      }
+    }
+
+    #button-area {
+      clear: both;
+      padding: 15px 0;
+      button {
+        display: block;
+        padding:  5px 10px;
+        margin: 0 5% 0 auto;
+        font-size: 1.05em;
+      }
+    }
+  }
+  
+  footer {
+    clear: both;
+    p {
+      text-align: center;
+    }
+  }
+}
