@@ -5,12 +5,12 @@ body {
   header {
     text-align: center;
   }
-  main {
+  main > #app {
     width: $maxWidth;
     overflow: hidden;
     margin: 0 auto;
 
-    #input-area {
+    > #input-area {
       width: 49.5%;
       float: left;
 
@@ -29,8 +29,10 @@ body {
         resize: none;
         vertical-align: bottom;
         border-radius: 3px;
+        tab-size: 4;
 
         &:hover {
+          border-color: rgb(29, 123, 230);
           box-shadow: 0 0 3px rgb(29, 123, 230);
         }
 
@@ -72,13 +74,13 @@ body {
       padding: 15px 0;
       button {
         display: block;
-        padding:  5px 10px;
+        padding: 5px 10px;
         margin: 0 5% 0 auto;
         font-size: 1.05em;
       }
     }
   }
-  
+
   footer {
     clear: both;
     p {
@@ -88,7 +90,7 @@ body {
 }
 
 @media only screen and (max-width: $maxWidth) {
-  body main {
+  body main > #app{
     width: 100%;
   }
 }
