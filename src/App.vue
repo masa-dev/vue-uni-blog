@@ -1,14 +1,12 @@
 <template>
-  <body>
-    <div id="app">
-      <Header />
-      <main>
-        <MainContent />
-        <SideContent />
-      </main>
-      <Footer />
-    </div>
-  </body>
+  <div id="app">
+    <Header />
+    <main>
+      <MainContent />
+      <SideContent />
+    </main>
+    <Footer />
+  </div>
 </template>
 
 <script>
