@@ -14,6 +14,11 @@
       <li><a href="./product/md2html/">マークダウン変換</a></li>
     </ul>
 
+    <h3>読んだ本</h3>
+    <ul>
+      <li><a href="https://www.amazon.co.jp/dp/4873119235/ref=cm_sw_r_tw_dp_0WX0N6D9C2P64S7BSMFP">ハンズオン Node.js</a></li>
+    </ul>
+
     <h3>このサイトについて</h3>
     <p>このサイトは Vue.js で作成しました。</p>
   </div>
