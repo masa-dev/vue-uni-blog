@@ -4,3 +4,9 @@
     <p>これはテストページです</p>
   </div>
 </template>
+
+<script>
+export default {
+  title: "Test",
+};
+</script>

@@ -5,3 +5,9 @@
     <router-link to="/post/test">test</router-link>
   </div>
 </template>
+
+<script>
+export default {
+  title: "Post",
+};
+</script>

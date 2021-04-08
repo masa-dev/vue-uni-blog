@@ -22,18 +22,7 @@ const routes = [
   {
     path: '/post',
     component: () => import(/* webpackChunkName: "post" */ '../views/Post.vue'),
-    children: [
-      {
-        path: '',
-        name: 'Post Home',
-        component: () => import('../views/posts/PostHome.vue')
-      },
-      {
-        path: 'test',
-        name: 'Test',
-        component: () => import('../views/posts/Test.vue')
-      }
-    ]
+    children: require('./posts')
   },
   {
     path: '/products',
@@ -42,6 +31,7 @@ const routes = [
   },
   {
     path: '/*',
+    name: 'Not Found',
     component: () => import('../views/404.vue')
   }
 ]
