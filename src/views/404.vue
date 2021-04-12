@@ -1,6 +1,7 @@
 <template>
   <div class="404">
     <h2>404 - Not Found</h2>
+    <p>お探しのページは見つかりませんでした。</p>
   </div>
 </template>
 

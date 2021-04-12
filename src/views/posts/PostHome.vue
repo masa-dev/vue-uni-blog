@@ -2,7 +2,11 @@
   <div>
     <h2>記事</h2>
     <p>必要があれば，ここに記録などをしていこうと考えています．</p>
-    <router-link to="/post/test">test</router-link>
+    <ul>
+      <li><router-link to="/post/post-210412">javascriptのプライベートについて</router-link></li>
+      <li><router-link to="/post/post-210305">サイトの構成</router-link></li>
+      <li><router-link to="/post/test">test</router-link></li>
+    </ul>
   </div>
 </template>
 
