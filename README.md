@@ -1,10 +1,11 @@
 # vue-uni-blog
 
 大学の個人のサイト用
+
 ビルドしてFTPでアップロードする
 
-大学のサイト
-
+> ### 大学のサイト
+> https://buturi.heteml.net/student/2021/toda/
 
 ## Project setup
 ```
