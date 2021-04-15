@@ -3,6 +3,9 @@
 大学の個人のサイト用
 ビルドしてFTPでアップロードする
 
+大学のサイト
+
+
 ## Project setup
 ```
 npm install
