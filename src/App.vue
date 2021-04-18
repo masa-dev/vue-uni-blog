@@ -49,6 +49,10 @@ body {
   p {
     font-size: 1.05em;
     padding-left: 1em;
+
+    strong {
+      color: rgb(240, 133, 11);
+    }
   }
 
   a {
