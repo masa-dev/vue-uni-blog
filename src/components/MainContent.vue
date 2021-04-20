@@ -13,6 +13,7 @@ export default {
 
 <style lang="scss">
 @import "_base.scss";
+@import "highlight/_vs.scss";
 
 div.main-content {
   width: $mainContentWidth;
@@ -43,6 +44,19 @@ div.main-content {
   ul {
     padding-left: 20px;
   }
+
+  pre {
+    padding: 10px;
+    margin: 1rem;
+    overflow-x: auto;
+    border: 1px solid rgb(240, 230, 207);
+    border-radius: 6px;
+
+    code {
+      font-size: 1rem;
+      font-family: Consolas, Monaco, monospace;
+    }
+  }
 }
 
 @media only screen and (max-width: $flexibleWidth) {
@@ -57,12 +71,17 @@ div.main-content {
     p {
       padding-left: 0.3em;
     }
+
+    pre {
+      margin-left: 0.3em;
+    }
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  @import '_darkBase.scss';
-  
+  @import "_darkBase.scss";
+  @import "highlight/_vs2015.scss";
+
   div.main-content {
     h2 {
       border: {
@@ -72,6 +91,10 @@ div.main-content {
 
     h3 {
       border-left: 4px solid $mainHeadingBorderColor;
+    }
+
+    pre {
+      border: 1px solid rgb(85, 85, 85);
     }
   }
 }
