@@ -17,6 +17,7 @@
     <h3>読んだ本</h3>
     <ul>
       <li><a href="https://www.amazon.co.jp/dp/4873119235/ref=cm_sw_r_tw_dp_0WX0N6D9C2P64S7BSMFP">ハンズオン Node.js</a></li>
+      <li><a href="https://www.amazon.co.jp/dp/4873115655/ref=cm_sw_r_tw_dp_X0FRBX5JW9GSXX658T2A">リーダブルコード</a></li>
     </ul>
 
     <h3>このサイトについて</h3>
