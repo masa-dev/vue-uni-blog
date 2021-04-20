@@ -23,7 +23,7 @@
       と書かれている点です。一部ブラウザや古いバージョンのNode.jsでは使えないため、注意が必要です。
     </p>
     <p>例は以下の通りです。</p>
-    <pre><code>class Sample {
+    <pre v-highlightjs><code class="javascript">class Sample {
   #private = &#39;foo&#39;
   public = &#39;bar&#39;
 }

@@ -13,6 +13,7 @@ export default {
 
 <style lang="scss">
 @import "_base.scss";
+@import "highlight/_vs.scss";
 
 div.main-content {
   width: $mainContentWidth;
@@ -49,7 +50,7 @@ div.main-content {
     margin-left: 1rem;
     margin-right: 0;
 
-    >* {
+    > * {
       padding: 0;
       margin: 0.3rem;
     }
@@ -57,6 +58,19 @@ div.main-content {
 
   ul {
     padding-left: 20px;
+  }
+
+  pre {
+    padding: 10px;
+    margin: 1rem;
+    overflow-x: auto;
+    border: 1px solid rgb(240, 230, 207);
+    border-radius: 6px;
+
+    code {
+      font-size: 1rem;
+      font-family: Consolas, Monaco, monospace;
+    }
   }
 }
 
@@ -72,11 +86,16 @@ div.main-content {
     p {
       padding-left: 0.3em;
     }
+
+    pre {
+      margin-left: 0.3em;
+    }
   }
 }
 
 @media (prefers-color-scheme: dark) {
   @import "_darkBase.scss";
+  @import "highlight/_vs2015.scss";
 
   div.main-content {
     h2 {
@@ -92,6 +111,10 @@ div.main-content {
     blockquote {
       border-left: 4px solid $mainHeadingBorderColor;
       background-color: rgb(41, 41, 44);
+    }
+
+    pre {
+      border: 1px solid rgb(85, 85, 85);
     }
   }
 }
