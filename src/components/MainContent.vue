@@ -40,6 +40,21 @@ div.main-content {
     }
   }
 
+  blockquote {
+    font-style: italic;
+    background-color: rgb(228, 228, 228);
+    border-radius: 0.25rem;
+    border-left: 4px solid $mainHeadingBorderColor;
+    padding: 0.4em 0.7rem;
+    margin-left: 1rem;
+    margin-right: 0;
+
+    >* {
+      padding: 0;
+      margin: 0.3rem;
+    }
+  }
+
   ul {
     padding-left: 20px;
   }
@@ -61,8 +76,8 @@ div.main-content {
 }
 
 @media (prefers-color-scheme: dark) {
-  @import '_darkBase.scss';
-  
+  @import "_darkBase.scss";
+
   div.main-content {
     h2 {
       border: {
@@ -72,6 +87,11 @@ div.main-content {
 
     h3 {
       border-left: 4px solid $mainHeadingBorderColor;
+    }
+
+    blockquote {
+      border-left: 4px solid $mainHeadingBorderColor;
+      background-color: rgb(41, 41, 44);
     }
   }
 }
