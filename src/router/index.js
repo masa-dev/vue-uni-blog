@@ -37,7 +37,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',//'history',
   base: siteConfig.pathPrefix, //default: process.env.BASE_URL,
   routes
 })
