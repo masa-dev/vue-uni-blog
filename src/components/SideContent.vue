@@ -133,12 +133,17 @@ div.side-content {
       flex-wrap: wrap;
       justify-content: space-around;
 
-      img {
+      > a > img {
         width: $toolsImageWidth;
         height: $toolsImageWidth;
         border-radius: 50%;
         background-color: gray;
         box-shadow: 0 0 8px gray;
+
+        &:hover {
+          background-color: rgb(37, 102, 241);
+          transition: background-color 0.3s;
+        }
       }
     }
   }
@@ -157,9 +162,13 @@ div.side-content {
   div.side-content {
     div.profile {
       div.tools {
-        img {
+        > a > img {
           background-color: transparent;
           box-shadow: none;
+
+          &:hover {
+            background-color: rgb(74, 111, 190);
+          }
         }
       }
     }
