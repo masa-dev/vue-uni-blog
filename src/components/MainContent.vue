@@ -26,7 +26,8 @@ div.main-content {
 
   h2 {
     border: {
-      bottom: 4px solid $mainHeadingBorderColor;
+      bottom: 4px solid;
+      color: $mainHeadingBorderColor;
       radius: 4px;
     }
   }
@@ -36,7 +37,8 @@ div.main-content {
     margin-bottom: 0.9em;
     padding-left: 15px;
     border: {
-      left: 4px solid $mainHeadingBorderColor;
+      left: 4px solid;
+      color: $mainHeadingBorderColor;
       radius: 3px;
     }
   }
@@ -44,13 +46,15 @@ div.main-content {
   blockquote {
     font-style: italic;
     background-color: rgb(228, 228, 228);
-    border-radius: 0.25rem;
-    border-left: 4px solid $mainHeadingBorderColor;
     padding: 0.4em 0.7rem;
-    margin-left: 1rem;
-    margin-right: 0;
+    margin: 1rem;
+    border: {
+      radius: 0.25rem;
+      left: 4px solid;
+      color: rgb(86, 162, 212);
+    }
 
-    > * {
+    > p {
       padding: 0;
       margin: 0.3rem;
     }
@@ -64,8 +68,11 @@ div.main-content {
     padding: 10px;
     margin: 1rem;
     overflow-x: auto;
-    border: 1px solid rgb(240, 230, 207);
-    border-radius: 6px;
+    border: 1px solid;
+    border: {
+      color: rgb(240, 230, 207);
+      radius: 6px;
+    }
 
     code {
       font-size: 1rem;
@@ -100,21 +107,25 @@ div.main-content {
   div.main-content {
     h2 {
       border: {
-        bottom: 4px solid $mainHeadingBorderColor;
+        bottom: 4px solid;
+        color: $mainHeadingBorderColor;
       }
     }
 
     h3 {
-      border-left: 4px solid $mainHeadingBorderColor;
+      border: {
+        left: 4px solid;
+        color: $mainHeadingBorderColor;
+      }
     }
 
     blockquote {
-      border-left: 4px solid $mainHeadingBorderColor;
+      border-color: rgb(50, 94, 148);
       background-color: rgb(41, 41, 44);
     }
 
     pre {
-      border: 1px solid rgb(85, 85, 85);
+      border-color: rgb(85, 85, 85);
     }
   }
 }
