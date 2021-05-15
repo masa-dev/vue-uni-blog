@@ -20,6 +20,7 @@ if (a &gt; b) {
 
 
 // 上記の処理を条件演算子で書いた場合の処理
+// 書き方は、「条件 ? trueの場合の戻り値 : falseの場合の戻り値」
 let a = 1, b = 2;
 let max = a &gt; b ? a : b;
 </code></pre>
@@ -43,6 +44,9 @@ let max = a &gt; b ? a : b;
 let arr = [1, 2, 3];
 console.log(sum(...arr));
 // &gt; 6
+
+console.log(...arr);
+// &gt; 1 2 3
 </code></pre>
     <blockquote>
       <p>
