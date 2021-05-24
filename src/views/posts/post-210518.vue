@@ -84,6 +84,18 @@ fs.readFile(&#39;data1.txt&#39;, function(data1) {
         >
       </p>
     </blockquote>
+    <h3 id="おまけ---非同期処理">おまけ - 非同期処理</h3>
+    <p>setTimeout以外の非同期処理の書き方は以下の方法があります。</p>
+    <pre v-highlightjs><code class="language-javascript">// Node.js用
+process.nextTick(() =&gt; {
+  console.log(&#39;Node.js用の非同期処理&#39;)
+})
+
+// ブラウザ、Node.js共用
+queueMicrotask(()=&gt; {
+  console.log(&#39;ブラウザ、Node.js共用の非同期処理&#39;)
+})
+</code></pre>
   </div>
 </template>
 
