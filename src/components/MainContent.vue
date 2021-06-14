@@ -43,6 +43,19 @@ div.main-content {
     }
   }
 
+  h4 {
+    font-size: 1.15rem;
+    margin: {
+      top: 1.25rem;
+      bottom: 0.9rem;
+      left: 0.5rem
+    }
+    margin-top: 1.25em;
+    margin-bottom: 0.9em;
+    padding-left: 1.25em;
+    border-left: 3px solid gray;
+  }
+
   blockquote {
     font-style: italic;
     background-color: rgb(228, 228, 228);
