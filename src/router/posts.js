@@ -35,6 +35,11 @@ module.exports = [
     component: () => import('../views/posts/post-210518.vue')
   },
   {
+    path: 'post-210615',
+    name: '',
+    component: () => import('../views/posts/post-210615.vue')
+  },
+  {
     path: '*',
     name: 'Not Found',
     component: () => import('../views/404.vue')
