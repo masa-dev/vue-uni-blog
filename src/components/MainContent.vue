@@ -48,12 +48,29 @@ div.main-content {
     margin: {
       top: 1.25rem;
       bottom: 0.9rem;
-      left: 0.5rem
+      left: 0.5rem;
     }
     margin-top: 1.25em;
     margin-bottom: 0.9em;
     padding-left: 1.25em;
     border-left: 3px solid gray;
+  }
+
+  table {
+    margin: 1rem;
+    border-collapse: collapse;
+
+    tr:nth-child(even) {
+      //偶数列のみ少し濃くする
+      background-color: rgb(244, 245, 248);
+    }
+
+    th,
+    td {
+      padding: 0.3rem 1rem;
+      border: solid 1px;
+      border-color: black;
+    }
   }
 
   blockquote {
@@ -107,6 +124,10 @@ div.main-content {
       padding-left: 0.3em;
     }
 
+    table {
+      margin-left: 0.3em;
+    }
+
     pre {
       margin-left: 0.3em;
     }
@@ -129,6 +150,18 @@ div.main-content {
       border: {
         left: 4px solid;
         color: $mainHeadingBorderColor;
+      }
+    }
+
+    table {
+      tr:nth-child(even) {
+        //偶数列のみ少し濃くする
+        background-color: rgb(40, 40, 43);
+      }
+
+      th,
+      td {
+        border-color: rgb(85, 85, 85);
       }
     }
 
