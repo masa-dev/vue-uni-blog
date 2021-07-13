@@ -1,7 +1,7 @@
 <template>
   <div class="side-content">
     <div class="profile">
-      <router-link to="./about"
+      <router-link to="/about"
         ><img
           src="../assets/profile-img.jpg"
           title="プロフィール画像"
