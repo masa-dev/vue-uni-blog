@@ -69,7 +69,7 @@ div.main-content {
     td {
       padding: 0.3rem 1rem;
       border: solid 1px;
-      border-color: black;
+      border-color: rgb(180, 185, 189);
     }
   }
 
