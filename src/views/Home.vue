@@ -20,6 +20,13 @@
       <li><a href="https://www.amazon.co.jp/dp/4873115655/ref=cm_sw_r_tw_dp_X0FRBX5JW9GSXX658T2A">リーダブルコード</a></li>
     </ul>
 
+    <h3>スワイプに関する参考サイトとか</h3>
+    <ul>
+      <li><a href="https://getbootstrap.jp/docs/5.0/components/carousel/" target="_blank" rel="noopener noreferrer">Bootstrap carousel(カルーセル)</a></li>
+      <li><a href="https://naver.github.io/egjs-flicking/" target="_blank" rel="noopener noreferrer">Flicking</a></li>
+      <li><a href="https://swiperjs.com/demos" target="_blank" rel="noopener noreferrer">Swiper（個人的なおすすめ）</a></li>
+    </ul>
+
     <h3>このサイトについて</h3>
     <p>このサイトは Vue.js で作成しました。</p>
   </div>
