@@ -12,6 +12,7 @@
       <li><a href="./product/toDoList/todo.html">toDoList</a></li>
       <li><a href="./product/BBS/">掲示板</a></li>
       <li><a href="./product/md2html/">マークダウン変換</a></li>
+      <li><a href="./product/threePanelComic/sample/">3コマ漫画サンプル</a></li>      
     </ul>
 
     <h3>読んだ本</h3>
@@ -24,7 +25,7 @@
     <ul>
       <li><a href="https://getbootstrap.jp/docs/5.0/components/carousel/" target="_blank" rel="noopener noreferrer">Bootstrap carousel(カルーセル)</a></li>
       <li><a href="https://naver.github.io/egjs-flicking/" target="_blank" rel="noopener noreferrer">Flicking</a></li>
-      <li><a href="https://swiperjs.com/demos" target="_blank" rel="noopener noreferrer">Swiper（個人的なおすすめ）</a></li>
+      <li><a href="https://swiperjs.com/demos" target="_blank" rel="noopener noreferrer">Swiper</a></li>
     </ul>
 
     <h3>このサイトについて</h3>

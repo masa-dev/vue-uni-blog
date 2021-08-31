@@ -8,6 +8,7 @@
       <li><a href="./product/toDoList/todo.html">toDoList</a></li>
       <li><a href="./product/BBS/">掲示板</a></li>
       <li><a href="./product/md2html/">マークダウン変換</a></li>
+      <li><a href="./product/threePanelComic/sample/">3コマ漫画サンプル</a></li>
     </ul>
   </div>
 </template>
