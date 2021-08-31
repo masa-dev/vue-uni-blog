@@ -50,3 +50,24 @@ img.checkbox {
 .flicking-pagination-bullet {
   padding: 2px;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .panel, .comic-page {
+    height: 200px;
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    background-color: bisque;
+    border-radius: 20px;
+  }
+
+  .flicking-arrow-prev, .flicking-arrow-next {
+    transform: scale(0.7, 0.7);
+    top: 35%;
+  }
+
+  .flicking-pagination-bullet {
+    padding: 1px;
+  }
+}
