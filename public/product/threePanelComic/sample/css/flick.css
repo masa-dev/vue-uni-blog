@@ -11,6 +11,10 @@
   border-radius: 20px;
 }
 
+.comic-page img {
+  pointer-events: none;
+}
+
 .selected-panel {
   position: relative;
 }

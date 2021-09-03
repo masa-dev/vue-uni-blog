@@ -10,7 +10,6 @@ flicking.on("ready", (e) => {
 });
 
 flicking.on("changed", (e) => {
-  console.log(e);
   document.getElementById("selected-index").innerHTML = `${e.index + 1} / ${e.currentTarget.panelCount}`;
 
   // 選択中のスライドのクラス変更
@@ -21,3 +20,6 @@ flicking.on("changed", (e) => {
 flicking.addPlugins(new Flicking.Plugins.Arrow());
 flicking.addPlugins(new Flicking.Plugins.Fade());
 flicking.addPlugins(new Flicking.Plugins.Pagination());
+
+flicking.activePlugins[1].scale = 0.8;
+flicking.activePlugins[1].update();
