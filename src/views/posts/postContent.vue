@@ -19,9 +19,14 @@ function searchPost(id) {
     }
   }
 
+  let errHtml = `
+  <h2>404 - Not Found</h2>
+  <p>お探しのページは見つかりませんでした。</p>
+  `;
+
   return {
-    body: "Not Found",
-    title: "Not Found",
+    body: errHtml,
+    title: "404: Not Found",
   };
 }
 
