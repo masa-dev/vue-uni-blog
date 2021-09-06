@@ -1,6 +1,7 @@
 'use strict';
 
 const marked = require("marked");
+const hljs = require("highlight.js");
 const fs = require("fs");
 
 const dir = './src/content/post';
@@ -12,12 +13,19 @@ fileList.sort();
 let contentList = [];
 let contentListJSON;
 
+marked.setOptions({
+  langPrefix: '',
+  highlight: function(code, lang) {
+    return hljs.highlightAuto(code, [lang]).value;
+  }
+});
+
 for (let fileName of fileList) {
   let content = fs.readFileSync(`${dir}/${fileName}`, 'utf-8');
   content = getMarkdownProperties(content, fileName);
   let htmlMarked = {
     property: content.property,
-    body: marked(content.body).replace(/<pre>/g, '<pre v-highlightjs>'),
+    body: marked(content.body),
   }
   contentList.push(htmlMarked);
 }
