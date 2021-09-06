@@ -27,5 +27,10 @@ npm run build
 npm run lint
 ```
 
+### Creating a JSON file with integrated articles
+```
+npm run create-post
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
