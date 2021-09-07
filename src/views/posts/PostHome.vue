@@ -11,7 +11,6 @@
       <li><router-link to="/post/2021-04-26">クロージャ</router-link></li>
       <li><router-link to="/post/2021-04-12">javascriptのプライベートについて</router-link></li>
       <li><router-link to="/post/2021-03-05">サイトの構成</router-link></li>
-      <li><router-link to="/post/test">test</router-link></li>
     </ul>
   </div>
 </template>

@@ -1,18 +1,12 @@
 module.exports = [
-
   {
     path: '',
     name: 'Post Home',
     component: () => import('../views/posts/PostHome.vue')
   },
   {
-    path: 'test',
-    name: 'Test',
-    component: () => import('../views/posts/Test.vue')
-  },
-  {
     path: ':id',
-    name: 'Content',
+    name: 'Post Content',
     component: () => import('../views/posts/postContent.vue')
   },
   {
