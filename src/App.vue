@@ -29,7 +29,7 @@ export default {
 <style lang="scss">
 @import "components/_base.scss";
 /* Noto Sans JP by Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 
 body {
   width: $flexibleWidth;
