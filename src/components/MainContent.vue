@@ -94,6 +94,14 @@ div.main-content {
     padding-left: 20px;
   }
 
+  code {
+    padding: 0.1em 0.3em;
+    margin: 0 0.15em;
+    background-color: rgb(238, 225, 186);
+    border-radius: 5px;
+    font-family: Consolas, Monaco, monospace;
+  }
+
   pre {
     padding: 10px;
     margin: 1rem;
@@ -105,6 +113,9 @@ div.main-content {
     }
 
     code {
+      padding: unset;
+      margin: unset;
+      background-color: unset;
       font-size: 1rem;
       font-family: Consolas, Monaco, monospace;
     }
@@ -125,11 +136,24 @@ div.main-content {
     }
 
     table {
-      margin-left: 0.3em;
+      margin: {
+        left: 0.3em;
+        right: 0.3em;
+      }
     }
 
     pre {
-      margin-left: 0.3em;
+      margin: {
+        left: 0.3em;
+        right: 0.3em;
+      }
+    }
+
+    blockquote {
+      margin: {
+        left: 0.4em;
+        right: 0.4em;
+      }
     }
   }
 }
@@ -168,6 +192,10 @@ div.main-content {
     blockquote {
       border-color: rgb(50, 94, 148);
       background-color: rgb(41, 41, 44);
+    }
+
+    code {
+      background-color: rgb(69, 69, 83);
     }
 
     pre {
