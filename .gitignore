@@ -23,4 +23,4 @@ pnpm-debug.log*
 *.sw?
 
 # Post content file
-./src/content/export/*.json
+src/content/export/content.json
