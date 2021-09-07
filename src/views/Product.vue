@@ -9,6 +9,9 @@
       <li><a href="./product/BBS/">掲示板</a></li>
       <li><a href="./product/md2html/">マークダウン変換</a></li>
       <li><a href="./product/threePanelComic/sample/">3コマ漫画サンプル</a></li>
+      <li>
+        <a href="./product/threePanelComic/sample2/">3コマ漫画サンプル 2</a>
+      </li>
     </ul>
   </div>
 </template>

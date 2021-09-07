@@ -1,0 +1,61 @@
+.flicking-viewport {
+  padding-bottom: 20px;
+}
+
+.panel, .comic-page {
+  height: 250px;
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+  background-color: bisque;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(70, 39, 0, 0.301);
+}
+
+.comic-page img {
+  pointer-events: none;
+}
+
+.comic-page>img {
+  height: 90%;
+  width: auto;
+  margin: 0 auto;
+}
+
+.page-wrapper {
+  text-align: center;
+}
+
+.page-wrapper>.comic-page {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.comic-page>p {
+  margin: 0;
+}
+
+.flicking-pagination-bullet {
+  padding: 2px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .panel, .comic-page {
+    height: 200px;
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    background-color: bisque;
+    border-radius: 20px;
+  }
+
+  .flicking-arrow-prev, .flicking-arrow-next {
+    transform: scale(0.7, 0.7);
+    top: 35%;
+  }
+
+  .flicking-pagination-bullet {
+    padding: 1px;
+  }
+}
