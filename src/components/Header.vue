@@ -48,14 +48,14 @@ header {
 
       border-bottom: 1px solid rgb(187, 187, 187);
       text-align: center;
-    }
 
-    li {
-      box-sizing: border-box;
-      font-size: 1.3em;
-      display: inline;
-      padding: 0px;
-      transition: border-bottom 0.3s;
+      li {
+        box-sizing: border-box;
+        font-size: 1.3rem;
+        display: inline;
+        padding: 0px;
+        transition: border-bottom 0.3s;
+      }
     }
 
     a {
@@ -66,6 +66,8 @@ header {
       text-decoration: none;
       transition: color 0.3s;
       transition: border-bottom 0.3s;
+      box-sizing: border-box;
+
       &.router-link-exact-active {
         border-bottom: 4px solid $activeBorder;
       }
