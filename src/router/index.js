@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-const siteConfig = require('../../config')
+import VueGtag from "vue-gtag"
+
+const siteConfig = require('../../config');
 
 Vue.use(VueRouter)
 
@@ -41,5 +43,10 @@ const router = new VueRouter({
   base: siteConfig.pathPrefix, //default: process.env.BASE_URL,
   routes
 })
+
+Vue.use(VueGtag, {
+  config: { id: siteConfig.googleAnalyticsId }
+}, router)
+
 
 export default router
