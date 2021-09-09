@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import content from "../../content/export/content.json";
+import content from "@/content/content.json";
 
 function getPost(id, callback) {
   callback(false, searchPost(id).body);
