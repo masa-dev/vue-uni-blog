@@ -7,6 +7,7 @@
         <li><router-link to="/about">プロフィール</router-link></li>
         <li><router-link to="/post">記事</router-link></li>
         <li><router-link to="/products">成果物</router-link></li>
+        <li><a href="../">研究室</a></li>
         <li>
           <a href="https://webftp.heteml.jp/" target="_blank" rel="noopener"
             >heteml<img src="../assets/external-link-img.svg"
