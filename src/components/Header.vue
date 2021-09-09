@@ -57,6 +57,7 @@ header {
         display: inline;
         padding: 0px;
         transition: border-bottom 0.3s;
+        white-space: nowrap;
       }
     }
 

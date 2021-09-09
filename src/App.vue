@@ -50,7 +50,7 @@ body {
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     padding-left: 1em;
 
     strong {
@@ -74,6 +74,27 @@ main {
   width: $flexibleWidth;
   display: flex;
   flex-wrap: wrap;
+}
+
+@media only screen and (min-width: $flexibleWidth) {
+  html {
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0);
+      border: none;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(128, 128, 128, 0.6);
+      border-radius: 5px;
+      box-shadow: none;
+    }
+  }
 }
 
 @media only screen and (max-width: $flexibleWidth) {
