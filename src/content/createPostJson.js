@@ -5,7 +5,7 @@ const hljs = require("highlight.js");
 const fs = require("fs");
 
 const dir = './src/content/post';
-const outDir = './src/content/export';
+const outDir = './src/content';
 const outFileName = 'content.json';
 const fileList = fs.readdirSync(dir);
 fileList.sort();
