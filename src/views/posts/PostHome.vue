@@ -14,11 +14,13 @@
 <script>
 import content from "@/content/content.json";
 
+const reversedContent = content.reverse();
+
 export default {
   title: "Post",
   data() {
     return {
-      posts: content.reverse(),
+      posts: reversedContent,
     };
   },
 };
