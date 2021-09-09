@@ -46,6 +46,7 @@ header {
         right: 10px;
       }
 
+      margin: 0;
       border-bottom: 1px solid rgb(187, 187, 187);
       text-align: center;
 
