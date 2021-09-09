@@ -33,4 +33,5 @@ src
 
 ### ディレクトリ作成に使用したツール
 
-> [dir-tree](https://dir-tree.netlify.app/)
+> サイト: [dir-tree](https://dir-tree.netlify.app/)\
+> GitHub: [Dir tree](https://github.com/care0717/dir-tree)
