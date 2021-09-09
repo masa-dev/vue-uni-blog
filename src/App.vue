@@ -29,7 +29,7 @@ export default {
 <style lang="scss">
 @import "components/_base.scss";
 /* Noto Sans JP by Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
 body {
   width: $flexibleWidth;
@@ -37,7 +37,7 @@ body {
   color: $defaultColor;
   /*background-color: rgb(15, 37, 64);*/
   background-color: $defaultBackgroundColor;
-  font-family: "Yu Gothic Medium", YuGothic, 'Noto Sans JP', sans-serif;
+  font-family: "Yu Gothic Medium", YuGothic, "Noto Sans JP", sans-serif;
   font-weight: 500;
 
   h1,

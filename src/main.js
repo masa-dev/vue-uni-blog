@@ -1,17 +1,17 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import titleMixin from './../util/title'
-import VueHighlightJS from 'vue-highlightjs'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import titleMixin from "./../util/title";
+import VueHighlightJS from "vue-highlightjs";
 
 // Tell Vue.js to use vue-highlightjs
-Vue.use(VueHighlightJS)
-Vue.config.productionTip = false
-Vue.mixin(titleMixin)
+Vue.use(VueHighlightJS);
+Vue.config.productionTip = false;
+Vue.mixin(titleMixin);
 
 new Vue({
   router,
   store,
-  render: h => h(App)
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");

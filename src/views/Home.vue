@@ -12,21 +12,54 @@
       <li><a href="./product/toDoList/todo.html">toDoList</a></li>
       <li><a href="./product/BBS/">掲示板</a></li>
       <li><a href="./product/md2html/">マークダウン変換</a></li>
-      <li><a href="./product/threePanelComic/sample/">3コマ漫画サンプル</a></li>      
-      <li><a href="./product/threePanelComic/sample2/">3コマ漫画サンプル 2</a></li>      
+      <li><a href="./product/threePanelComic/sample/">3コマ漫画サンプル</a></li>
+      <li>
+        <a href="./product/threePanelComic/sample2/">3コマ漫画サンプル 2</a>
+      </li>
     </ul>
 
     <h3>読んだ本</h3>
     <ul>
-      <li><a href="https://www.amazon.co.jp/dp/4873119235/ref=cm_sw_r_tw_dp_0WX0N6D9C2P64S7BSMFP">ハンズオン Node.js</a></li>
-      <li><a href="https://www.amazon.co.jp/dp/4873115655/ref=cm_sw_r_tw_dp_X0FRBX5JW9GSXX658T2A">リーダブルコード</a></li>
+      <li>
+        <a
+          href="https://www.amazon.co.jp/dp/4873119235/ref=cm_sw_r_tw_dp_0WX0N6D9C2P64S7BSMFP"
+          >ハンズオン Node.js</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.amazon.co.jp/dp/4873115655/ref=cm_sw_r_tw_dp_X0FRBX5JW9GSXX658T2A"
+          >リーダブルコード</a
+        >
+      </li>
     </ul>
 
     <h3>スワイプに関する参考サイトとか</h3>
     <ul>
-      <li><a href="https://getbootstrap.jp/docs/5.0/components/carousel/" target="_blank" rel="noopener noreferrer">Bootstrap carousel(カルーセル)</a></li>
-      <li><a href="https://naver.github.io/egjs-flicking/" target="_blank" rel="noopener noreferrer">Flicking</a></li>
-      <li><a href="https://swiperjs.com/demos" target="_blank" rel="noopener noreferrer">Swiper</a></li>
+      <li>
+        <a
+          href="https://getbootstrap.jp/docs/5.0/components/carousel/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Bootstrap carousel(カルーセル)</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://naver.github.io/egjs-flicking/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Flicking</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://swiperjs.com/demos"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Swiper</a
+        >
+      </li>
     </ul>
 
     <h3>このサイトについて</h3>
