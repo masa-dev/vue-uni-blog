@@ -92,6 +92,7 @@ div.main-content {
 
   ul {
     padding-left: 20px;
+    margin-left: 20px;
   }
 
   code {
