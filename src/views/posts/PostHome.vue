@@ -1,11 +1,11 @@
 <template>
   <div>
     <h2>記事</h2>
-    <ul>
+    <ul class="post-list">
       <li v-for="post in posts" :key="post.property.fileName">
-        <router-link :to="`/post/${post.property.fileName}`">{{
-          post.property.title
-        }}</router-link>
+        <router-link :to="`/post/${post.property.fileName}`">
+          <div class="post-item">{{ post.property.title }}</div>
+        </router-link>
       </li>
     </ul>
   </div>
