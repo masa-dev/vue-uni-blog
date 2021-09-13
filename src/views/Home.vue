@@ -34,6 +34,18 @@
       </li>
     </ul>
 
+    <h3>参考メモ</h3>
+    <ul>
+      <li>
+        <a
+          href="https://www.hws-kyokai.or.jp/images/ronbun/all/201608-03.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >認知の偏りと抑うつの関連 - 厚生労働統計協会</a
+        >
+      </li>
+    </ul>
+
     <h3>スワイプに関する参考サイトとか</h3>
     <ul>
       <li>
