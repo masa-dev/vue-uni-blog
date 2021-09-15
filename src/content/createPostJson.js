@@ -30,7 +30,7 @@ for (let fileName of fileList) {
   };
 
   // imgタグの画像をbase64形式で表示する
-  htmlMarked.body = convertImgToBase64(htmlMarked.body, "./src/content/img")
+  htmlMarked.body = convertImgToBase64(htmlMarked.body, "./src/content/img");
 
   // draft(下書き)で無ければ内容を取得する
   if (content.property.draft.toLowerCase() === "false") {
