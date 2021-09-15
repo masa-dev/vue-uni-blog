@@ -33,9 +33,16 @@ div.main-content {
   }
 
   h3 {
+    font-size: 1.2rem;
     margin-top: 1.25em;
     margin-bottom: 0.9em;
     padding-left: 15px;
+    padding: {
+      top: 0.2em;
+      left: 1em;
+      bottom: 0.2em;
+    }
+
     border: {
       left: 4px solid;
       color: $mainHeadingBorderColor;
@@ -52,8 +59,12 @@ div.main-content {
     }
     margin-top: 1.25em;
     margin-bottom: 0.9em;
-    padding-left: 1.25em;
-    border-left: 3px solid gray;
+    padding: {
+      top: 0.1em;
+      left: 1.25em;
+      bottom: 0.1em;
+    }
+    border-left: 3px dashed gray;
   }
 
   table {
@@ -71,6 +82,11 @@ div.main-content {
       border: solid 1px;
       border-color: rgb(180, 185, 189);
     }
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 10px;
   }
 
   blockquote {
@@ -96,10 +112,12 @@ div.main-content {
   }
 
   code {
-    padding: 0.1em 0.3em;
+    vertical-align: text-top;
+    padding: 0.1em 0.3em 0.28em;
     margin: 0 0.15em;
-    background-color: rgb(238, 225, 186);
+    background-color: rgb(248, 230, 195);
     border-radius: 5px;
+    white-space: nowrap;
     font-family: Consolas, Monaco, monospace;
   }
 
@@ -117,6 +135,7 @@ div.main-content {
       padding: unset;
       margin: unset;
       background-color: unset;
+      white-space: unset;
       font-size: 1rem;
       font-family: Consolas, Monaco, monospace;
     }

@@ -55,6 +55,7 @@ body {
 
     strong {
       color: rgb(240, 133, 11);
+      white-space: nowrap;
     }
   }
 
