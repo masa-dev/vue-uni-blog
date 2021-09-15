@@ -27,7 +27,13 @@ for (let fileName of fileList) {
     property: content.property,
     body: marked(content.body),
   };
-  contentList.push(htmlMarked);
+
+  // draft(下書き)で無ければ内容を取得する
+  if (content.property.draft.toLowerCase() === "false") {
+    // draftプロパティは不要なため、削除する
+    delete content.property.draft;
+    contentList.push(htmlMarked);
+  }
 }
 
 contentListJSON = JSON.stringify(contentList); // null, 2

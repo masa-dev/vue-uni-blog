@@ -15,7 +15,11 @@ const fullPath = `${outDir}/${fileName}`;
 if (fs.existsSync(fullPath)) {
   console.error(`Error: すでに "${fullPath}" は存在しています。`);
 } else {
-  fs.writeFileSync(fullPath, `---${CRLF}title: ${CRLF}---${CRLF}`, "utf-8");
+  fs.writeFileSync(
+    fullPath,
+    `---${CRLF}title: ${CRLF}draft: true${CRLF}---${CRLF + CRLF + CRLF}`,
+    "utf-8"
+  );
 }
 
 /**
