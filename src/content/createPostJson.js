@@ -3,6 +3,7 @@
 const marked = require("marked");
 const hljs = require("highlight.js");
 const fs = require("fs");
+const convertImgToBase64 = require("../../util/convertImgToBase64");
 
 const dir = "./src/content/post";
 const outDir = "./src/content";
@@ -27,6 +28,9 @@ for (let fileName of fileList) {
     property: content.property,
     body: marked(content.body),
   };
+
+  // imgタグの画像をbase64形式で表示する
+  htmlMarked.body = convertImgToBase64(htmlMarked.body, "./src/content/img")
 
   // draft(下書き)で無ければ内容を取得する
   if (content.property.draft.toLowerCase() === "false") {
