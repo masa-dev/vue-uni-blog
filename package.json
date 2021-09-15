@@ -6,7 +6,8 @@
     "serve": "npm run create-post && vue-cli-service serve",
     "build": "npm run create-post && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "create-post": "node src/content/createPostJson.js"
+    "create-post": "node src/content/createPostJson.js",
+    "create-md": "node src/content/createPostMd.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",

@@ -32,5 +32,10 @@ npm run lint
 npm run create-post
 ```
 
+### Create a Markdown file based on dates.
+```
+npm run create-md
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
