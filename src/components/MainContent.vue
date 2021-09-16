@@ -268,7 +268,7 @@ body.dark-theme {
 
     pre {
       border-color: rgb(85, 85, 85);
-      
+
       code {
         background-color: unset;
       }
