@@ -46,17 +46,14 @@ footer {
   text-align: center;
 }
 
-// ダークテーマ（スイッチ切り替え用）
-body.dark-theme {
-  footer {
-    hr {
-      height: 1px;
-      background-color: rgb(129, 129, 129);
-      border: none;
-    }
-    p {
-      font-size: 0.85rem;
-    }
+footer {
+  hr {
+    height: 1px;
+    background-color: rgb(129, 129, 129);
+    border: none;
+  }
+  p {
+    font-size: 0.85rem;
   }
 }
 </style>
