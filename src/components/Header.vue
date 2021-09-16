@@ -89,9 +89,34 @@ header {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  @import "_darkBase.scss";
+@media only screen and (max-width: 600px) {
+  header {
+    h1 {
+      font-size: 1.7rem;
+    }
+  }
 
+  @media only screen and (max-width: 500px) {
+    header {
+      h1 {
+        padding-left: 8%;
+        text-align: left;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 380px) {
+    header {
+      h1 {
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+// ダークテーマ（スイッチ切り替え用）
+body.dark-theme {
+  @import "_darkBase.scss";
   header {
     h1 {
       a {

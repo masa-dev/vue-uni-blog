@@ -225,7 +225,8 @@ div.main-content {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+// ダークテーマ（スイッチ切り替え用）
+body.dark-theme {
   @import "_darkBase.scss";
   @import "highlight/_vs2015.scss";
 
@@ -267,6 +268,10 @@ div.main-content {
 
     pre {
       border-color: rgb(85, 85, 85);
+      
+      code {
+        background-color: unset;
+      }
     }
 
     /* post list style */

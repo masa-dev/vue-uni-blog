@@ -156,7 +156,8 @@ div.side-content {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+// ダークテーマ（スイッチ切り替え用）
+body.dark-theme {
   @import "_darkBase.scss";
 
   div.side-content {

@@ -46,7 +46,8 @@ footer {
   text-align: center;
 }
 
-@media (prefers-color-scheme: dark) {
+// ダークテーマ（スイッチ切り替え用）
+body.dark-theme {
   footer {
     hr {
       height: 1px;

@@ -24,7 +24,7 @@ export default {
     Header,
     MainContent,
     SideContent,
-    Footer
+    Footer,
   },
 };
 </script>
@@ -35,6 +35,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
 body {
+  transition: 0.5s background-color, color;
   position: relative;
   width: $flexibleWidth;
   padding-top: 1px;
@@ -107,6 +108,7 @@ main {
   body {
     width: 100%;
     padding: 0;
+    padding-top: 1px;
     margin: 0;
 
     p {
@@ -119,23 +121,23 @@ main {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+// ダークテーマ（スイッチ切り替え用）
+body.dark-theme {
   @import "components/_darkBase.scss";
+  transition: 0s background-color;
 
-  body {
-    color: $defaultColor;
-    background-color: $defaultBackgroundColor;
+  color: $defaultColor;
+  background-color: $defaultBackgroundColor;
 
-    a {
+  a {
+    color: $defaultAnkerColor;
+
+    &:visited {
       color: $defaultAnkerColor;
+    }
 
-      &:visited {
-        color: $defaultAnkerColor;
-      }
-
-      &:hover {
-        color: rgb(255, 115, 0);
-      }
+    &:hover {
+      color: rgb(255, 115, 0);
     }
   }
 }
