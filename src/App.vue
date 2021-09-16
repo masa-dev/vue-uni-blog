@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <ToggleTheme />
     <Header />
     <main>
       <MainContent />
@@ -10,6 +11,7 @@
 </template>
 
 <script>
+import ToggleTheme from "@/components/ToggleTheme.vue";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import MainContent from "@/components/MainContent.vue";
@@ -18,10 +20,11 @@ import SideContent from "@/components/SideContent.vue";
 export default {
   name: "Home",
   components: {
+    ToggleTheme,
     Header,
     MainContent,
     SideContent,
-    Footer,
+    Footer
   },
 };
 </script>
@@ -32,7 +35,9 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
 body {
+  position: relative;
   width: $flexibleWidth;
+  padding-top: 1px;
   margin: 0 auto;
   color: $defaultColor;
   /*background-color: rgb(15, 37, 64);*/
