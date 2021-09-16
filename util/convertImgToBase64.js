@@ -8,9 +8,11 @@ const imgToBase64 = require("./imgToBase64");
  */
 
 function convertImgToBase64(html, imgFolderPath) {
-  let convertedHtml = html.replace(/<img(\s)src=\".+?\"/g, function (match) {
-    let url = match.match(/\"(?<url>.+)\"/).groups.url;
+  let convertedHtml = html.replace(/<img(\s)src=\".+?\"(\s)alt=\".+?\">/g, function (match) {
+    let url = match.match(/src=\"(?<url>.+?)\"/).groups.url;
     url = url.match(/[^\/]+$/)[0];
+
+    let alt = match.match(/alt=\"(?<alt>.+?)\"/).groups.alt;
 
     let ext = url.match(/[^\.]+$/)[0];
     ext = ext.toLowerCase();
@@ -25,7 +27,7 @@ function convertImgToBase64(html, imgFolderPath) {
 
     let base64 = imgToBase64(`${imgFolderPath}/${url}`, type);
 
-    return `<img src="${base64}"`;
+    return `<div class="img-wrapper"><img src="${base64}" alt="${alt}"></div>`;
   })
 
   return convertedHtml;

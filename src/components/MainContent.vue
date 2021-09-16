@@ -84,9 +84,13 @@ div.main-content {
     }
   }
 
-  img {
-    max-width: 100%;
-    border-radius: 10px;
+  .img-wrapper {
+    overflow-x: auto;
+
+    img {
+      max-width: $flexibleWidth;
+      border-radius: 10px;
+    }
   }
 
   blockquote {
