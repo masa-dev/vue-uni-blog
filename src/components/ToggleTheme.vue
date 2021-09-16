@@ -58,7 +58,7 @@ export default {
   props: {},
   data() {
     return {
-      isDark: true,
+      isDark: false,
       /**
        * @type {String} ローカルストレージのID
        */
@@ -97,7 +97,9 @@ export default {
     },
   },
   created() {
-    this.isDark = toBoolean(localStorage.getItem(this.lsId));
+    let lsVal = localStorage.getItem(this.lsId);
+    // LocalStrageに設定されていない場合は、初期値としてfalseを設定する
+    this.isDark = lsVal === null ? false : toBoolean(lsVal);
 
     if (this.isDark) document.body.classList.add("dark-theme");
   },
