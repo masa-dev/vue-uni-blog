@@ -7,6 +7,7 @@
       fill="currentColor"
       id="toggle-to-sun"
       class="bi bi-sun-fill"
+      :class="{ selected: !isDark }"
       viewBox="0 0 16 16"
       @click="changeWhite()"
     >
@@ -33,6 +34,7 @@
       fill="currentColor"
       id="toggle-to-moon"
       class="bi bi-moon-stars-fill"
+      :class="{ selected: isDark }"
       viewBox="0 0 16 16"
       @click="changeDark()"
     >
@@ -87,12 +89,8 @@ export default {
 
       if (this.isDark) {
         document.body.classList.add("dark-theme");
-        document.getElementById("toggle-to-sun").classList.remove("selected");
-        document.getElementById("toggle-to-moon").classList.add("selected");
       } else {
         document.body.classList.remove("dark-theme");
-        document.getElementById("toggle-to-moon").classList.remove("selected");
-        document.getElementById("toggle-to-sun").classList.add("selected");
       }
     },
     loadLocalStrage() {
@@ -113,12 +111,6 @@ export default {
       // リロード時に保存したスタイルが一瞬適用されるため、
       // 短い時間を開けてスタイルを変更する
       document.body.style.transition = "0.75s background-color, 0.75s color";
-
-      if (this.isDark) {
-        document.getElementById("toggle-to-moon").classList.add("selected");
-      } else {
-        document.getElementById("toggle-to-sun").classList.add("selected");
-      }
     }, 100);
   },
 };
