@@ -35,7 +35,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
 body {
-  transition: 0.75s background-color, color;
+  transition: 0.75s background-color, 0.75s, color;
   position: relative;
   width: $flexibleWidth;
   padding-top: 1px;

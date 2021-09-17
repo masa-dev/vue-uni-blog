@@ -102,6 +102,12 @@ export default {
     this.isDark = lsVal === null ? false : toBoolean(lsVal);
 
     if (this.isDark) document.body.classList.add("dark-theme");
+
+    setTimeout(() => {
+      // リロード時に保存したスタイルが一瞬適用されるため、
+      // 短い時間を開けてスタイルを変更する
+      document.body.style.transition = "0.75s background-color, 0.75s color";
+    }, 100);
   },
 };
 </script>
