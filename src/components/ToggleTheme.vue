@@ -145,14 +145,14 @@ export default {
     }
 
     &.bi-sun-fill {
-      padding-left: 2px;
+      padding-right: 2px;
       &.selected {
         color: rgb(230, 140, 23);
       }
     }
 
     &.bi-moon-stars-fill {
-      padding-right: 2px;
+      padding-left: 2px;
       &.selected {
         color: rgb(219, 206, 17);
       }

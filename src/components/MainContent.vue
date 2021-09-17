@@ -14,6 +14,7 @@ export default {
 <style lang="scss">
 @import "_base.scss";
 @import "highlight/_vs.scss";
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 
 div.main-content {
   width: $mainContentWidth;
@@ -121,7 +122,7 @@ div.main-content {
     background-color: rgb(248, 230, 195);
     border-radius: 5px;
     white-space: nowrap;
-    font-family: Consolas, Monaco, monospace;
+    font-family: Consolas, 'Ubuntu Mono', monospace;
   }
 
   pre {
@@ -140,7 +141,7 @@ div.main-content {
       background-color: unset;
       white-space: unset;
       font-size: 1rem;
-      font-family: Consolas, Noto Sans JP, monospace;
+      font-family: Consolas, 'Ubuntu Mono', Noto Sans JP, monospace;
       line-height: 120%;
     }
   }
