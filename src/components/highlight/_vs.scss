@@ -1,6 +1,13 @@
 /*
 Visual Studio-like style based on original C# coloring by Jason Diamond <jason@diamond.name>
 */
+
+// 追加部分
+.hljs-doctag-val {
+  color: #399df0;
+}
+//
+
 pre,
 .hljs {
   /*background: white;*/
@@ -11,6 +18,7 @@ pre,
 .hljs-comment,
 .hljs-quote,
 .hljs-variable {
+  font-style: italic;
   color: #008000;
 }
 

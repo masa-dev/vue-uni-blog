@@ -3,6 +3,12 @@
  * Author: Nicolas LLOBERA <nllobera@gmail.com>
  */
 
+// 追加部分
+.hljs-doctag-val {
+  color: #a6dbff;
+}
+//
+
 pre,
 .hljs {
   background: #1e1e1e;
@@ -55,7 +61,8 @@ pre,
 }
 
 .hljs-doctag {
-  color: #608b4e;
+  //color: #608b4e;
+  color: #569cd6
 }
 
 .hljs-meta,

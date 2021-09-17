@@ -116,8 +116,7 @@ div.main-content {
   }
 
   code {
-    vertical-align: text-top;
-    padding: 0.1em 0.3em 0.28em;
+    padding: 0.1em 0.3em 0.15em;
     margin: 0 0.15em;
     background-color: rgb(248, 230, 195);
     border-radius: 5px;
@@ -141,7 +140,8 @@ div.main-content {
       background-color: unset;
       white-space: unset;
       font-size: 1rem;
-      font-family: Consolas, Monaco, monospace;
+      font-family: Consolas, Noto Sans JP, monospace;
+      line-height: 120%;
     }
   }
 
