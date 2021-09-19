@@ -1,6 +1,8 @@
 "use strict";
 
+const { exec } = require("child_process");
 const fs = require("fs");
+const config = require("../../config");
 
 const CRLF = "\r\n";
 const outDir = "./src/content/post";
@@ -15,10 +17,18 @@ const fullPath = `${outDir}/${fileName}`;
 if (fs.existsSync(fullPath)) {
   console.error(`Error: すでに "${fullPath}" は存在しています。`);
 } else {
-  fs.writeFileSync(
+  fs.writeFile(
     fullPath,
     `---${CRLF}title: ${CRLF}draft: true${CRLF}---${CRLF + CRLF + CRLF}`,
-    "utf-8"
+    "utf-8",
+    () => {
+      // 作成したMdファイルを開く
+      if (config.OpenMdFileWhenCreated) {
+        exec(`code ${fullPath}`, (err) => {
+          if (err) console.error(err);
+        });
+      }
+    }
   );
 }
 

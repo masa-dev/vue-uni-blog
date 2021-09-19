@@ -15,4 +15,5 @@ module.exports = {
       mail: "1810990019g@hiro.kindai.ac.jp",
     },
   },
+  OpenMdFileWhenCreated: true,
 };
