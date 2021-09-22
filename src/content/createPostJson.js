@@ -31,7 +31,7 @@ for (let fileName of fileList) {
 
   // imgタグの画像をbase64形式で表示する
   htmlMarked.body = convertImgToBase64(htmlMarked.body, "./src/content/img");
-  htmlMarked.body = customHighlightjs(htmlMarked.body);
+  htmlMarked.body = customHtml(htmlMarked.body);
 
   // draft(下書き)で無ければ内容を取得する
   if (content.property.draft.toLowerCase() === "false") {
@@ -71,7 +71,7 @@ function getMarkdownProperties(content = "", fileName = "") {
   };
 }
 
-function customHighlightjs(html) {
+function customHtml(html) {
   let convertedHtml = html.replace(
     /<span(\s)class="hljs-doctag">@param(\s)<span(\s)class="hljs-type">{.+?}<\/span>(\s)<\/span>.+?(\s)/g,
     function (match) {
@@ -79,6 +79,13 @@ function customHighlightjs(html) {
       let val = match.match(/}<\/span>(\s|)<\/span>(?<val>.+?)(\s)/).groups.val;
       let replacedVal = `<span class="hljs-doctag-val">${val} </span>`;
       return `<span class="hljs-doctag">@param <span class="hljs-type">{${type}}</span> </span>${replacedVal}`;
+    }
+  );
+
+  convertedHtml = convertedHtml.replace(
+    /<table>[\s\S]+?<\/table>/g,
+    function (table) {
+      return `<div class="table-wrapper">${table}</div>`;
     }
   );
 

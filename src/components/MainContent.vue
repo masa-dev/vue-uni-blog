@@ -35,9 +35,8 @@ div.main-content {
 
   h3 {
     font-size: 1.2rem;
-    margin-top: 1.25em;
+    margin-top: 1.75em;
     margin-bottom: 0.9em;
-    padding-left: 15px;
     padding: {
       top: 0.2em;
       left: 1em;
@@ -54,12 +53,10 @@ div.main-content {
   h4 {
     font-size: 1.15rem;
     margin: {
-      top: 1.25rem;
+      top: 1.6em;
       bottom: 0.9rem;
       left: 0.5rem;
     }
-    margin-top: 1.25em;
-    margin-bottom: 0.9em;
     padding: {
       top: 0.1em;
       left: 1.25em;
@@ -68,20 +65,22 @@ div.main-content {
     border-left: 3px dashed gray;
   }
 
-  table {
-    margin: 1rem;
-    border-collapse: collapse;
+  .table-wrapper {
+    table {
+      margin: 1rem;
+      border-collapse: collapse;
 
-    tr:nth-child(even) {
-      //偶数列のみ少し濃くする
-      background-color: rgb(244, 245, 248);
-    }
+      tr:nth-child(even) {
+        //偶数列のみ少し濃くする
+        background-color: rgb(244, 245, 248);
+      }
 
-    th,
-    td {
-      padding: 0.3rem 1rem;
-      border: solid 1px;
-      border-color: rgb(180, 185, 189);
+      th,
+      td {
+        padding: 0.3rem 1rem;
+        border: solid 1px;
+        border-color: rgb(180, 185, 189);
+      }
     }
   }
 
@@ -190,10 +189,15 @@ div.main-content {
       padding-left: 0.3em;
     }
 
-    table {
-      margin: {
-        left: 0.3em;
-        right: 0.3em;
+    .table-wrapper {
+      overflow-x: auto;
+
+      table {
+        min-width: 450px;
+        margin: {
+          left: 0.3em;
+          right: 0.3em;
+        }
       }
     }
 
