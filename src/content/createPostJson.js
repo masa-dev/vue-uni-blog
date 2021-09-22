@@ -83,6 +83,17 @@ function customHtml(html) {
   );
 
   convertedHtml = convertedHtml.replace(
+    /<pre><code(\s)class="(js|javascript)">[\s\S]+?<\/code><\/pre>/g,
+    function (code) {
+      code = code.replace(
+        /=&gt;/g,
+        '<span class="hljs-arrow-symbol">=&gt;</span>'
+      );
+      return code;
+    }
+  );
+
+  convertedHtml = convertedHtml.replace(
     /<table>[\s\S]+?<\/table>/g,
     function (table) {
       return `<div class="table-wrapper">${table}</div>`;
