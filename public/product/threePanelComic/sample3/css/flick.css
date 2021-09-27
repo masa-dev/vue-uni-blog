@@ -1,0 +1,106 @@
+.flicking-viewport {
+  padding-bottom: 20px;
+}
+
+.panel, .comic-page {
+  height: 240px;
+  width: 280px;
+  margin: 10px;
+  text-align: center;
+  background-color: bisque;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(70, 39, 0, 0.301);
+}
+
+.comic-page img {
+  pointer-events: none;
+}
+
+.comic-page>img {
+  height: 90%;
+  width: auto;
+  margin: 0 auto;
+}
+
+.page-wrapper {
+  text-align: center;
+}
+
+.page-wrapper>.comic-page {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.comic-page>p {
+  margin: 0;
+}
+
+.flicking-pagination-bullet {
+  padding: 2px;
+}
+
+.flicking-arrow-next {
+  animation-name: arrow-next;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.flicking-arrow-prev {
+  animation-name: arrow-prev;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* アニメーションの軌道の調整部分 */
+
+@keyframes arrow-next {
+  /* 0% */
+  from {
+    transform: translateX(-10px) translateY(-50%);
+  }
+  80% {
+    transform: translateX(-10px) translateY(-50%);
+  }
+  90% {
+    transform: translateX(0px) translateY(-50%);
+  }
+  /* 100% */
+  to {
+    transform: translateX(-10px) translateY(-50%);
+  }
+}
+
+@keyframes arrow-prev {
+  from {
+    transform: translateX(10px) translateY(-50%);
+  }
+  80% {
+    transform: translateX(10px) translateY(-50%);
+  }
+  90% {
+    transform: translateX(0px) translateY(-50%);
+  }
+  to {
+    transform: translateX(10px) translateY(-50%);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .panel, .comic-page {
+    height: 200px;
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    background-color: bisque;
+    border-radius: 20px;
+  }
+  .flicking-arrow-prev, .flicking-arrow-next {
+    transform: scale(0.7, 0.7);
+    top: 35%;
+  }
+  .flicking-pagination-bullet {
+    padding: 1px;
+  }
+}

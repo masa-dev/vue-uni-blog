@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  font-family: 'Kosugi Maru', 'Meiryo', serif;
+  background-color: rgba(255, 228, 196, 0.199);
+}
+
+header {
+  padding: 5px;
+  text-align: center;
+  background-color: wheat;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+main {
+  width: 900px;
+  box-sizing:border-box;
+  padding: 10px 20px;
+  margin: 0 auto 20px;
+  border: 1px solid rgb(146, 107, 58);
+  background-color: rgba(255, 228, 196, 0.3);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), -5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-left-item {
+  box-sizing: border-box;
+  width: 40%;
+  padding-right: 10px;
+}
+
+.flex-right-item {
+  width: 60%;
+}
+
+main h2 {
+  font-size: 1.5rem;
+  padding: 15px;
+  margin: 15px auto;
+  background-color: rgb(250, 207, 151);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+main h3 {
+  font-size: 1.17rem;
+  padding: 10px;
+  padding-left: 5px;
+  margin-left: 10px;
+  border-left: 5px solid rgb(238, 158, 54);
+}
+
+main h3::before {
+  content: "： ";
+}
+
+select {
+  width: 100px
+}
+
+select > option {
+  padding: 2px 5px;
+}
+
+footer {
+  padding: 5px;
+  background-color: rgb(241, 186, 114);
+  text-align: center;
+}
+
+.footer-container {
+  width: 800px;
+  box-sizing:border-box;
+  padding: 10px 20px;
+  margin: 0 auto;
+  display: flex;
+  text-align: left;
+}
+
+.footer-col {
+  width: calc(100%/3);
+  padding: 0 20px;
+}
+
+.footer-col:nth-child(n + 2) {
+  border-left: 1px solid rgb(141, 101, 49);
+}
+
+.footer-col h4 {
+  margin: 10px 0;
+  font-size: 1.15rem;
+}
+
+.footer-col ul {
+  padding: 0;
+}
+
+.footer-col ul li {
+  font-size: 1.1rem;
+  padding: 5px 0;
+  list-style: none;
+}
+
+@media only screen and (max-width: 900px) {
+  main {
+    width: 90%;
+  }
+  .footer-container {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    width: 95%;
+    padding: 10px 10px;
+  }
+
+  .flex-container {
+    display: unset;
+    flex-wrap: unset;
+  }
+
+  .flex-left-item {
+    width: 100%;
+  }
+
+  .flex-right-item {
+    width: 100%;
+  }
+
+  main h2 {
+    font-size: 1.4rem;
+  }
+
+  main h3 {
+    font-size: 1.1rem;
+  }
+
+  main p {
+    font-size: 0.9rem;
+  }
+
+  .footer-container {
+    padding: 10px 5px;
+    width: 95%;
+  }
+
+  .footer-col {
+    padding: 0 10px;
+  }
+
+  .footer-col h4 {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+
+  .footer-col ul li {
+    font-size: 1rem;
+  }
+}
