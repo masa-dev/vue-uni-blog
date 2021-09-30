@@ -79,6 +79,12 @@
 
     <h3>このサイトについて</h3>
     <p>このサイトは Vue.js で作成しました。</p>
+    <p>
+      GitHub:
+      <a href="http://github.com/masa-dev/vue-uni-blog"
+        >masa-dev/vue-uni-blog: 大学用の個人ページをビルドするプログラム</a
+      >
+    </p>
   </div>
 </template>
 
