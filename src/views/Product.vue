@@ -12,6 +12,9 @@
       <li>
         <a href="./product/threePanelComic/sample2/">3コマ漫画サンプル 2</a>
       </li>
+      <li>
+        <a href="./product/threePanelComic/sample3/">3コマ漫画サンプル 3</a>
+      </li>
     </ul>
   </div>
 </template>
