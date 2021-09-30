@@ -57,14 +57,6 @@ main h3::before {
   content: "： ";
 }
 
-select {
-  width: 100px
-}
-
-select > option {
-  padding: 2px 5px;
-}
-
 footer {
   padding: 5px;
   background-color: rgb(241, 186, 114);

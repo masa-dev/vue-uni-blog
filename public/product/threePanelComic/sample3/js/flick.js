@@ -13,15 +13,14 @@ flicking.on("ready", (e) => {
 
 flicking.on("changed", (e) => {
   const emotionTexts = [
-    "少しの不満",
-    "すごい怒り",
-    "何とかするべきだ",
-    "変な人と思われたくない"
+    "勇気・ポジティブ思考",
+    "諦め・途方に暮れる",
+    "不安・焦り",
+    "絶望・自己嫌悪"
   ];
 
   document.getElementById("emotional-image").src = `img/sample-2-${e.index}.png`;
   document.getElementById("emotional-text").innerHTML = emotionTexts[e.index];
-  flickSelect.selectedIndex = e.index;
 });
 
 flicking.addPlugins(new Flicking.Plugins.Arrow());
