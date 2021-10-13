@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>login result</title>
+  <link rel="stylesheet" href="login.css">
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
+</head>
+
+<body>
+  <h1>Login result</h1>
+  <p id="login-text"></p>
+  <p id="user-info"></p>
+  <div>
+    <button id="sign-out" onclick="signOut()">サインアウト（ログアウト）</button>
+    <button id="send-mail" onclick="sendMail()">send mail</button>
+  </div>
+  <script>
+    let isSignOut = false;
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpGctSAbaR9u9H_lfCaGuuDy--v0OKJI8",
+      authDomain: "my-test-project-c235b.firebaseapp.com",
+      databaseURL: "https://my-test-project-c235b-default-rtdb.firebaseio.com",
+      projectId: "my-test-project-c235b",
+      storageBucket: "my-test-project-c235b.appspot.com",
+      messagingSenderId: "1093453348161",
+      appId: "1:1093453348161:web:9eafa826bffab090f675c0",
+      measurementId: "G-PW6XR4M65Q"
+    };
+
+    // firebaseの初期化
+    firebase.initializeApp(firebaseConfig);
+
+
+    // 認証状態をチェックする
+    firebase.auth().onAuthStateChanged(async function (user) {
+      if (user) {
+        // console.log(user);
+        // 名前が入力されていない場合、入力させる
+        if (user.displayName === null) {
+          let newName = prompt("名前を入力して下さい", "User Name");
+          await user.updateProfile({ displayName: newName })
+        }
+
+        document.getElementById("login-text").innerHTML = "ログインしました。";
+        document.getElementById("user-info").innerHTML = `${user.displayName}さん、こんにちは`;
+      }
+      else if (isSignOut) {
+        alert("ログアウトしました");
+        location.href = "./login.html";
+      }
+      else {
+        alert("ログインされていません\nログイン画面にリダイレクトします");
+        location.href = "./login.html";
+      }
+    });
+
+    async function signOut() {
+      isSignOut = true;
+      await firebase.auth().signOut();
+    }
+
+    function sendMail() {
+      firebase.auth().sendPasswordResetEmail(firebase.auth().currentUser.email)
+        .then((e) => {
+          console.log(e)
+        })
+    }
+  </script>
+</body>
+
+</html>

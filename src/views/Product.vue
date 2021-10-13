@@ -15,6 +15,9 @@
       <li>
         <a href="./product/threePanelComic/sample3/">3コマ漫画サンプル 3</a>
       </li>
+      <li>
+        <a href="./product/firebaseTest/login.html">ログイン デモ</a>
+      </li>
     </ul>
   </div>
 </template>

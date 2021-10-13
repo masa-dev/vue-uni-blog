@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>firebase test</title>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/5.0.0/firebase-ui-auth__ja.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/5.0.0/firebase-ui-auth.css" />
+
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <main>
+    <h1 style="text-align: center;">ログイン画面</h1>
+    <div id="firebaseui-auth-container"></div>
+    <div>
+      <p>ログイン後のページ： <a href="./result.html">result</a></p>
+      <h2>link</h2>
+      <p><a href="https://github.com/firebase/firebaseui-web">FirebaseUI for Web — Auth - GitHub</a></p>
+      <p><a href="https://qiita.com/azukiazusa/items/af46d620ff2c3b4327a6">Firebase
+          Authenticationを利用する【Javascript、Vue.js】 - Qiita</a></p>
+      <p><a href="https://firebase.google.com/docs/auth/web/firebaseui?hl=ja">FirebaseUI でウェブアプリに簡単にログイン機能を追加する</a></p>
+    </div>
+  </main>
+
+  <!--<script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js"></script>-->
+  <script>
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpGctSAbaR9u9H_lfCaGuuDy--v0OKJI8",
+      authDomain: "my-test-project-c235b.firebaseapp.com",
+      databaseURL: "https://my-test-project-c235b-default-rtdb.firebaseio.com",
+      projectId: "my-test-project-c235b",
+      storageBucket: "my-test-project-c235b.appspot.com",
+      messagingSenderId: "1093453348161",
+      appId: "1:1093453348161:web:9eafa826bffab090f675c0",
+      measurementId: "G-PW6XR4M65Q"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    uiConfig = {
+      signInSuccessUrl: './result.html',
+      signInOptions: [
+        {
+          provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          // アカウント作成時にログインメールを送信する
+          signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD,
+          forceSameDevice: false
+        },
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+        //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+        //firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+        //firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+      ],
+      tosUrl: './tos.html',
+      privacyPolicyUrl: function () {
+        window.location.assign('./privacyPolicyUrl.html');
+      }
+    }
+
+    const ui = new firebaseui.auth.AuthUI(firebase.auth());
+    ui.start('#firebaseui-auth-container', uiConfig);
+  </script>
+</body>
+
+</html>

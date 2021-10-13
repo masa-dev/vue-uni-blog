@@ -1,0 +1,10 @@
+body {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.firebaseui-page-provider-sign-in {
+  padding: 10px;
+  background-color: rgb(186, 220, 243);
+  border-radius: 10px;
+}
