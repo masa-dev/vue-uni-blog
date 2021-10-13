@@ -19,8 +19,16 @@ flicking.on("changed", (e) => {
     "絶望・自己嫌悪"
   ];
 
+  const slideMessage = [
+    "楽観的に考えている",
+    "失敗について引きずっており、ボーっとしている",
+    "また失敗するかもしれないという不安があり、次こそは失敗することは出来ないと焦っている",
+    "失敗に次ぐ失敗で自信を失っている"
+  ]
+
   document.getElementById("emotional-image").src = `img/sample-2-${e.index}.png`;
   document.getElementById("emotional-text").innerHTML = emotionTexts[e.index];
+  document.getElementById("slide-message").innerHTML = slideMessage[e.index];
 });
 
 flicking.addPlugins(new Flicking.Plugins.Arrow());
