@@ -24,6 +24,7 @@
       <p><a href="https://qiita.com/azukiazusa/items/af46d620ff2c3b4327a6">Firebase
           Authenticationを利用する【Javascript、Vue.js】 - Qiita</a></p>
       <p><a href="https://firebase.google.com/docs/auth/web/firebaseui?hl=ja">FirebaseUI でウェブアプリに簡単にログイン機能を追加する</a></p>
+      <p><a href="https://blog.katsubemakito.net/firebase/firebase-authentication-email-web1">[Firebase] Authenticationでメール認証 (Web編) その1</a></p>
     </div>
   </main>
 
@@ -51,6 +52,7 @@
         {
           provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
           // アカウント作成時にログインメールを送信する
+          // 事前に承認済みドメインに指定する必要があるかも
           signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD,
           forceSameDevice: false
         },

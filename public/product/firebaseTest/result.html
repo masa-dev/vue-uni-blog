@@ -16,7 +16,6 @@
   <p id="user-info"></p>
   <div>
     <button id="sign-out" onclick="signOut()">サインアウト（ログアウト）</button>
-    <button id="send-mail" onclick="sendMail()">send mail</button>
   </div>
   <script>
     let isSignOut = false;
@@ -62,13 +61,6 @@
     async function signOut() {
       isSignOut = true;
       await firebase.auth().signOut();
-    }
-
-    function sendMail() {
-      firebase.auth().sendPasswordResetEmail(firebase.auth().currentUser.email)
-        .then((e) => {
-          console.log(e)
-        })
     }
   </script>
 </body>
