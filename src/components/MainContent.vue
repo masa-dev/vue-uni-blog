@@ -255,6 +255,10 @@ body.dark-theme {
   @import "highlight/_vs2015.scss";
 
   div.main-content {
+    menu {
+      background-color: #2c2c30;
+    }
+
     h2 {
       border: {
         bottom: 4px solid;
