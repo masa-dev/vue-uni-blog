@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>firebase test</title>
   <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/5.0.0/firebase-ui-auth__ja.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/5.0.0/firebase-ui-auth.css" />
@@ -25,6 +25,7 @@
           Authenticationを利用する【Javascript、Vue.js】 - Qiita</a></p>
       <p><a href="https://firebase.google.com/docs/auth/web/firebaseui?hl=ja">FirebaseUI でウェブアプリに簡単にログイン機能を追加する</a></p>
       <p><a href="https://blog.katsubemakito.net/firebase/firebase-authentication-email-web1">[Firebase] Authenticationでメール認証 (Web編) その1</a></p>
+      <p><a href="../../">戸田の卒研サイト</a></p>
     </div>
   </main>
 
@@ -46,7 +47,7 @@
 
     firebase.initializeApp(firebaseConfig);
 
-    uiConfig = {
+    const uiConfig = {
       signInSuccessUrl: './result.html',
       signInOptions: [
         {

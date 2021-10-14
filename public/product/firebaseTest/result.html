@@ -6,7 +6,7 @@
   <title>login result</title>
   <link rel="stylesheet" href="login.css">
   <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
 </head>
 
@@ -18,6 +18,14 @@
     <button id="sign-out" onclick="signOut()">サインアウト（ログアウト）</button>
   </div>
   <script>
+    // 戻るボタンはリロードする
+    window.onpageshow = () => {
+      var flag = window.performance.navigation.type;
+      if(flag === 2) {
+        location.reload()
+      }
+    }
+
     let isSignOut = false;
 
     const firebaseConfig = {
@@ -33,7 +41,6 @@
 
     // firebaseの初期化
     firebase.initializeApp(firebaseConfig);
-
 
     // 認証状態をチェックする
     firebase.auth().onAuthStateChanged(async function (user) {
