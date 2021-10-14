@@ -21,6 +21,21 @@ div.main-content {
   padding: 0 15px;
   box-sizing: border-box;
 
+  menu {
+    padding: 20px;
+    background-color: rgb(231, 228, 202);
+    border-radius: 10px;
+    max-width: 500px;
+
+    ul {
+      margin: 0;
+
+      li {
+        list-style-type: disc;
+      }
+    }
+  }
+
   h1 {
     font-size: 30px;
   }
