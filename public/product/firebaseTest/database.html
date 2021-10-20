@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>database</title>
+  <link rel="stylesheet" href="login.css">
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database-compat.js"></script>
+</head>
+
+<body>
+  <h1>database</h1>
+  <p id="login-text"></p>
+  <p id="user-info"></p>
+  <div class="db-info">
+    <h2>データベースのデータ</h2>
+    <p id="db-user-name"></p>
+    <div>
+      <button onclick="initUserData()">初期化（リセット）</button>
+    </div>
+    <div>
+      <input type="text" id="input-new-name">
+      <button onclick="updateUserName()">更新</button>
+    </div>
+  </div>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpGctSAbaR9u9H_lfCaGuuDy--v0OKJI8",
+      authDomain: "my-test-project-c235b.firebaseapp.com",
+      databaseURL: "https://my-test-project-c235b-default-rtdb.firebaseio.com",
+      projectId: "my-test-project-c235b",
+      storageBucket: "my-test-project-c235b.appspot.com",
+      messagingSenderId: "1093453348161",
+      appId: "1:1093453348161:web:9eafa826bffab090f675c0",
+      measurementId: "G-PW6XR4M65Q"
+    };
+
+    // firebaseの初期化
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // 認証状態をチェックする
+    firebase.auth().onAuthStateChanged(async function (user) {
+      if (user) {
+        // console.log(user);
+        // 名前が入力されていない場合、入力させる
+        if (user.displayName === null) {
+          let newName = prompt("名前を入力して下さい", "User Name");
+          await user.updateProfile({ displayName: newName })
+        }
+
+        document.getElementById("login-text").innerHTML = "ログインしました。";
+        document.getElementById("user-info").innerHTML = `${user.displayName}さん、こんにちは`;
+
+        database
+          .ref(`users/${user.uid}`)
+          .on("value", (snapshot) => {
+            const data = snapshot.val();
+            const dbTextElement = document.getElementById("db-user-name")
+
+            dbTextElement.textContent = "username: " + data.username;
+          })
+      }
+      else {
+        alert("ログインされていません\nログイン画面にリダイレクトします");
+        location.href = "./login.html";
+      }
+    });
+
+    function initUserData() {
+      const user = firebase.auth().currentUser;
+      database
+        .ref(`users/${user.uid}`)
+        .set({
+          username: user.displayName,
+          email: user.email,
+          profile_picture: user.photoURL
+        });
+    }
+
+    function updateUserName() {
+      const user = firebase.auth().currentUser;
+      const newName = document.getElementById("input-new-name").value;
+      database
+        .ref(`users/${user.uid}`)
+        .child("username")
+        .set(newName);
+    }
+  </script>
+</body>
+
+</html>
