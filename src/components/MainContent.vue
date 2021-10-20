@@ -37,7 +37,8 @@ div.main-content {
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 2.2rem;
+    text-align: center;
   }
 
   h2 {
@@ -50,8 +51,11 @@ div.main-content {
 
   h3 {
     font-size: 1.2rem;
-    margin-top: 1.75em;
-    margin-bottom: 0.9em;
+    margin: {
+      top: 1.75em;
+      left: 0.6em;
+      bottom: 0.9em;
+    }
     padding: {
       top: 0.2em;
       left: 1em;
@@ -100,6 +104,7 @@ div.main-content {
   }
 
   .img-wrapper {
+    margin: 0 1rem;
     overflow-x: auto;
 
     img {
@@ -214,6 +219,10 @@ div.main-content {
           right: 0.3em;
         }
       }
+    }
+
+    .img-wrapper {
+      margin: 0;
     }
 
     pre {
