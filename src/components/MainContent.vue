@@ -194,6 +194,30 @@ div.main-content {
       }
     }
   }
+
+  details {
+    height: var(--collapsed);
+    overflow: hidden;
+    margin: 1em;
+    border: 1px solid gray;
+    border-radius: 5px;
+    transition: height 300ms cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    box-shadow: 0 0 3px rgba(128, 128, 128, 0.4);
+
+    summary {
+      padding: 0.5em;
+      background-color: rgb(233, 241, 241);
+      outline: none;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    &[open] {
+      summary {
+        border-bottom: 1px solid gray;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: $flexibleWidth) {
@@ -254,6 +278,11 @@ div.main-content {
           right: 5px;
         }
       }
+    }
+
+    details {
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 }
@@ -319,6 +348,13 @@ body.dark-theme {
         &:hover {
           background-color: rgb(36, 36, 41);
         }
+      }
+    }
+
+    details {
+      box-shadow: none;
+      summary {
+        background-color: rgb(55, 60, 65);
       }
     }
   }
