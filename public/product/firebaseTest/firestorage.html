@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>database</title>
+  <link rel="stylesheet" href="login.css">
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-storage-compat.js"></script>
+</head>
+
+<body>
+  <h1>Cloud Storage</h1>
+  <p id="login-text"></p>
+  <p id="user-info"></p>
+  <div class="storage-file">
+    <div>
+      <input type="file" id="upload-file">
+      <button id="upload-button">upload</button>
+    </div>
+    <div id="storage-images">
+      <img id="my-image" src="" alt="No image">
+    </div>
+  </div>
+  <h2>参照</h2>
+  <ul>
+    <li><a href="https://firebase.google.com/docs/storage/web/create-reference">ウェブでストレージ参照を作成する  |  Firebase</a></li>
+  </ul>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpGctSAbaR9u9H_lfCaGuuDy--v0OKJI8",
+      authDomain: "my-test-project-c235b.firebaseapp.com",
+      databaseURL: "https://my-test-project-c235b-default-rtdb.firebaseio.com",
+      projectId: "my-test-project-c235b",
+      storageBucket: "my-test-project-c235b.appspot.com",
+      messagingSenderId: "1093453348161",
+      appId: "1:1093453348161:web:9eafa826bffab090f675c0",
+      measurementId: "G-PW6XR4M65Q"
+    };
+
+    // firebaseの初期化
+    firebase.initializeApp(firebaseConfig);
+
+    // 認証状態をチェックする
+    firebase.auth().onAuthStateChanged(async function (user) {
+      if (user) {
+        // console.log(user);
+        // 名前が入力されていない場合、入力させる
+        if (user.displayName === null) {
+          let newName = prompt("名前を入力して下さい", "User Name");
+          await user.updateProfile({ displayName: newName })
+        }
+
+        document.getElementById("login-text").innerHTML = "ログインしました。";
+        document.getElementById("user-info").innerHTML = `${user.displayName}さん、こんにちは`;
+      }
+      else {
+        alert("ログインされていません\nログイン画面にリダイレクトします");
+        location.href = "./login.html";
+      }
+    });
+
+    document.getElementById("upload-button").addEventListener("click", () => {
+      const storage = firebase.storage();
+      const file = document.getElementById("upload-file").files[0]
+      if (file) {
+        const ref = storage.ref().child(file.name);
+        ref.put(file).then((snapshot) => {
+          alert("アップロードしました")
+          console.log(snapshot)
+        })
+      }
+    })
+  </script>
+</body>
+
+</html>
