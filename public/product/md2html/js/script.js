@@ -5,7 +5,7 @@ const md = new Vue({
   },
   computed: {
     convertMarkdown: function () {
-      return marked(this.input);
+      return marked.parse(this.input);
     }
   },
   methods: {
