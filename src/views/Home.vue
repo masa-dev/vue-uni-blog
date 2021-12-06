@@ -23,7 +23,9 @@
         <a href="./product/firebaseTest/login.html">ログイン デモ</a>
       </li>
       <li>
-        <a href="https://github.com/masa-dev/three-panel-comic-demo">3コマ漫画サンプル デモ</a>
+        <a href="https://github.com/masa-dev/three-panel-comic-demo"
+          >3コマ漫画サンプル デモ</a
+        >
       </li>
     </ul>
 
