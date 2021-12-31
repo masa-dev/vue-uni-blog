@@ -1,7 +1,7 @@
 <?php
 // 下記のURLにアクセスを許可する
-header('Access-Control-Allow-Origin: https://buturi.heteml.net');
-header('Access-Control-Allow-Origin: https://masa-dev.github.io');
+//header('Access-Control-Allow-Origin: https://masa-dev.github.io');
+header('Access-Control-Allow-Origin: *');
 // 文字コード
 header("Content-Type: application/json; charset=UTF-8");
 
