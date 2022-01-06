@@ -42,6 +42,7 @@ div.main-content {
   }
 
   h2 {
+    margin-top: 40px;
     border: {
       bottom: 4px solid;
       color: $mainHeadingBorderColor;
