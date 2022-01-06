@@ -5,10 +5,10 @@ header('Access-Control-Allow-Origin: *');
 // 文字コード
 header("Content-Type: application/json; charset=UTF-8");
 
-$num = $_GET["num"];
-$path = "./" . $num;
+$comicId = $_GET["comic"];
+$path = "./" . $comicId;
 
-if (is_numeric($num) && file_exists($path)) {
+if (is_numeric($comicId) && file_exists($path)) {
   // 漫画の情報ファイルを読み込む
   $files = glob($path . "/*.png");
   $count = 0;
@@ -28,7 +28,7 @@ if (is_numeric($num) && file_exists($path)) {
   }
 } else {
   // statusをfalseにする
-  if (!is_numeric($num)) {
+  if (!is_numeric($comicId)) {
     $msg = "入力された値が正しくありません";
   } elseif (!file_exists($path)) {
     $msg = "ファイルが存在しません";

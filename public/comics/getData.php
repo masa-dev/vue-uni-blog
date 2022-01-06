@@ -5,10 +5,10 @@ header('Access-Control-Allow-Origin: *');
 // 文字コード
 header("Content-Type: application/json; charset=UTF-8");
 
-$num = $_GET["num"];
-$path = "./" . $num . "/data.json";
+$comicId = $_GET["comic"];
+$path = "./" . $comicId . "/data.json";
 
-if (is_numeric($num) && file_exists($path)) {
+if (is_numeric($comicId) && file_exists($path)) {
   // 漫画の情報ファイルを読み込む
   $comicData = file_get_contents($path);
   $comicData = mb_convert_encoding($comicData, "UTF-8", "auto");
@@ -19,7 +19,7 @@ if (is_numeric($num) && file_exists($path)) {
   $response["type"] = $comicObj->{"type"};
 } else {
   // statusをfalseにする
-  if (!is_numeric($num)) {
+  if (!is_numeric($comicId)) {
     $msg = "入力された値が正しくありません";
   } else if (!file_exists($path)) {
     $msg = "ファイルが存在しません";
