@@ -2,6 +2,26 @@
   <div class="Home">
     <h2>ホームページ</h2>
 
+    <h3>卒業論文とか</h3>
+    <p>
+      制作アプリ : <a href="./cbt-three-panel-manga/">認知行動療法３コマ漫画</a>
+    </p>
+    <p>
+      卒業論文PDF（pdf） :
+      <a
+        href="./thesis/1810990019戸田正彦R3卒論.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        >1810990019戸田正彦R3卒論.pdf</a
+      >
+    </p>
+    <p>
+      卒業論文ワード（docx，ダウンロード） :
+      <a href="./thesis/1810990019戸田正彦R3卒論.docx"
+        >1810990019戸田正彦R3卒論.docx</a
+      >
+    </p>
+
     <h3>研究室</h3>
     <p>研究室のリンク：<a href="../">2021年研究室</a></p>
 
