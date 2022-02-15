@@ -2,25 +2,89 @@
   <div class="Home">
     <h2>ホームページ</h2>
 
-    <h3>卒業論文とか</h3>
-    <p>
-      制作アプリ : <a href="./cbt-three-panel-manga/">認知行動療法３コマ漫画</a>
-    </p>
-    <p>
-      卒業論文PDF（pdf） :
-      <a
-        href="./thesis/1810990019戸田正彦R3卒論.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        >1810990019戸田正彦R3卒論.pdf</a
-      >
-    </p>
-    <p>
-      卒業論文ワード（docx，ダウンロード） :
-      <a href="./thesis/1810990019戸田正彦R3卒論.docx"
-        >1810990019戸田正彦R3卒論.docx</a
-      >
-    </p>
+    <h3>卒業論文関連</h3>
+
+    <div class="table-wrapper">
+      <table>
+        <tbody>
+          <tr>
+            <th>種類</th>
+            <th>リンク</th>
+          </tr>
+          <tr>
+            <td>制作アプリケーション</td>
+            <td>
+              <a
+                href="./cbt-three-panel-manga/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >認知行動療法３コマ漫画</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>ソースコード</td>
+            <td>
+              <a
+                href="https://github.com/masa-dev/three-panel-comic-demo"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>ソースコード（閲覧用）</td>
+            <td>
+              <a
+                href="https://github1s.com/masa-dev/three-panel-comic-demo"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub1s</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>卒論（Word）</td>
+            <td>
+              <a href="./thesis/1810990019戸田正彦R3卒論.docx"
+                >1810990019戸田正彦R3卒論.docx</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>卒論（PDF）</td>
+            <td>
+              <a
+                href="./thesis/1810990019戸田正彦R3卒論.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >1810990019戸田正彦R3卒論.pdf</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>卒論プレゼン（パワポ）</td>
+            <td>
+              <a href="./thesis/卒論プレゼンテーション.pptx"
+                >卒論プレゼンテーション.pptx</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>卒論発表原稿（PDF）</td>
+            <td>
+              <a
+                href="./thesis/卒論発表原稿.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >卒論発表原稿.pdf</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <h3>研究室</h3>
     <p>研究室のリンク：<a href="../">2021年研究室</a></p>
