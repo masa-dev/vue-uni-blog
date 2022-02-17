@@ -3,7 +3,7 @@
 const marked = require("marked");
 const hljs = require("highlight.js");
 const fs = require("fs");
-const convertImgToBase64 = require("../../util/convertImgToBase64");
+const convertImgToBase64 = require("../util/convertImgToBase64");
 
 const dir = "./src/content/post";
 const outDir = "./src/content";
