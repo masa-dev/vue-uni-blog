@@ -2,6 +2,19 @@
   <div class="Home">
     <h2>ホームページ</h2>
 
+    <h3>このサイトについて</h3>
+
+    <p>情報物理研究室の戸田の卒研用のサイトです。</p>
+    <p>卒業研究の資料や、技術的な記事をここに置いています。</p>
+    <p>
+      GitHubリンク：<a
+        href="https://github.com/masa-dev/vue-uni-blog"
+        target="_blank"
+        rel="noopener noreferrer"
+        >masa-dev/vue-uni-blog</a
+      >
+    </p>
+
     <h3>卒業論文関連</h3>
 
     <div class="table-wrapper">
@@ -168,20 +181,12 @@
         >
       </li>
     </ul>
-
-    <h3>このサイトについて</h3>
-    <p>このサイトは Vue.js で作成しました。</p>
-    <p>
-      GitHub:
-      <a href="http://github.com/masa-dev/vue-uni-blog"
-        >masa-dev/vue-uni-blog: 大学用の個人ページをビルドするプログラム</a
-      >
-    </p>
   </div>
 </template>
 
 <script>
 export default {
   title: "Home",
+  description: "情報物理研究室の戸田の卒研用のサイトです。",
 };
 </script>
