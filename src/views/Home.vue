@@ -187,6 +187,7 @@
 <script>
 export default {
   title: "Home",
-  description: "情報物理研究室の戸田の卒研用のサイトです。",
+  description:
+    "情報物理研究室の戸田の卒研用のサイトです。卒業研究の資料や、技術的な記事をここに置いています。",
 };
 </script>
